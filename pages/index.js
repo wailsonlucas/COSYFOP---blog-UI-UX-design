@@ -38,8 +38,91 @@ export default function Home() {
           <p>Trending Posts</p>
         </header>
         <main>
-          hhh
+
+          <div className={s.trending_post}>
+            <div className={s.img_container}>
+              <img src={"/images/static/t1.jpg"} alt="" />
+            </div>
+            <div className={s.content}>
+              Lorem ipsum dolor sit amet, consectetur
+            </div>
+            <footer>
+            <div>
+              <i class="fa-regular fa-clock"></i>
+              <span> Aug 19, 2022</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-comment"></i>
+              <span> 33</span>
+            </div>
+            </footer>
+          </div>
+
+          <div className={s.trending_post}>
+            <div className={s.img_container}>
+              <img src={"/images/static/t2.jpg"} alt="" />
+            </div>
+            <div className={s.content}>
+              Lorem ipsum dolor sit amet, consectetur
+            </div>
+            <footer>
+            <div>
+              <i class="fa-regular fa-clock"></i>
+              <span> Aug 19, 2022</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-comment"></i>
+              <span> 33</span>
+            </div>
+            </footer>
+          </div>
+
+          <div className={s.trending_post}>
+            <div className={s.img_container}>
+              <img src={"/images/static/t3.jpg"} alt="" />
+            </div>
+            <div className={s.content}>
+              Lorem ipsum dolor sit amet, consectetur
+            </div>
+            <footer>
+            <div>
+              <i class="fa-regular fa-clock"></i>
+              <span> Aug 19, 2022</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-comment"></i>
+              <span> 33</span>
+            </div>
+            </footer>
+          </div>
+
+          <div className={s.trending_post}>
+            <div className={s.img_container}>
+              <img src={"/images/static/t4.jpg"} alt="" />
+            </div>
+            <div className={s.content}>
+              Lorem ipsum dolor sit amet, consectetur
+            </div>
+            <footer>
+            <div>
+              <i class="fa-regular fa-clock"></i>
+              <span> Aug 19, 2022</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-comment"></i>
+              <span> 33</span>
+            </div>
+            </footer>
+          </div>
         </main>
+
+        <div className={s.intro}>
+            <div>
+              <p>s</p>
+              <p>s</p>
+            </div>
+            <img src={"/images/static/j1.jpg"} alt="" />
+        </div>
       </div>
     </div>
   )

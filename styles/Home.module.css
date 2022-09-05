@@ -44,7 +44,7 @@
 }
 /* ________________________ trending_posts _________________________ */
 .trending_posts header {
-  margin:0 20px;
+  margin:0 var(--sideMargin);
   margin-top:20px;
   margin-bottom:40px;
   border-bottom:1px solid #0F0E0E
@@ -55,4 +55,53 @@
   padding:5px 14px;
   color: #fff;
   background:#0F0E0E;
+}
+.trending_posts main {
+  display: flex;
+  justify-content: space-between;
+  margin:0 var(--sideMargin)
+}
+.trending_post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height:320px;
+  width: 220px;
+}
+.trending_post .img_container {
+  height:60%
+}
+.trending_post .img_container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover
+}
+.trending_post .content {
+  flex-grow: 1;
+  padding:0 4px;
+  font-size: 22px
+}
+.trending_post footer {
+  display: flex;
+  align-items: center;
+  color:var(--g);
+  padding:8px 0;
+  font-size:14px
+}
+.trending_post footer div:first-child {
+  margin-right:14px;
+}
+/* ____________________ intro _____________________ */
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 var(--sideMargin);
+  height:300px;
+}
+.intro > div {
+  width:50%;
+}
+.intro img {
+  width: 40%;
 }

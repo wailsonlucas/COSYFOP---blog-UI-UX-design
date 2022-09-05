@@ -12,7 +12,7 @@ export default function Nav() {
           <Link href="/"><a>Business</a></Link>
         </div>
         <div className={s.socials_container}>
-          <i class="fa-solid fa-phone"></i><span>  +213 456 789 159</span>
+          <i className="fa-solid fa-phone"></i><span>  +213 456 789 159</span>
         </div>
       </div>
       <div className={s.title_container}>
