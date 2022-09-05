@@ -32,6 +32,15 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      <div className={s.trending_posts}>
+        <header>
+          <p>Trending Posts</p>
+        </header>
+        <main>
+          hhh
+        </main>
+      </div>
     </div>
   )
 }
