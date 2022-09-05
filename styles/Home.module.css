@@ -96,12 +96,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:0 var(--sideMargin);
-  height:300px;
+  margin:60px var(--sideMargin);
+  height:340px;
 }
 .intro > div {
   width:50%;
 }
 .intro img {
-  width: 40%;
+  width: 45%;
 }
+.intro .shade {
+  color:var(--g);
+  font-weight: 900
+}
+.intro .title {
+  font-size: 36px;
+  margin:8px 0;
+  font-weight: 900;
+}
+.intro .title span:first-child {
+  color:var(--prime) !important;
+}
+.intro .title span:last-child {
+  color:var(--i) !important;
+}
+.intro .desc {
+  color:var(--a)
+}
+/* ____________________ bode ____________________ */

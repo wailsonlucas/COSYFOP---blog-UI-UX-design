@@ -115,15 +115,35 @@ export default function Home() {
             </footer>
           </div>
         </main>
-
-        <div className={s.intro}>
-            <div>
-              <p>s</p>
-              <p>s</p>
-            </div>
-            <img src={"/images/static/j1.jpg"} alt="" />
-        </div>
       </div>
+
+      <div className={s.intro}>
+          <div>
+            <p className={s.shade}>What we are looking for</p>
+            <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
+            <p className={s.desc}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+          </div>
+          <img src={"/images/static/j1.jpg"} alt="" />
+      </div>
+
+      <div className={s.intro}>
+      <img src={"/images/static/j2.jpg"} alt="" />
+          <div>
+            <p className={s.shade}>What we are looking for</p>
+            <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
+            <p className={s.desc}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+          </div>
+      </div>
+
+      <div className={s.body}>
+        <main>
+          main
+        </main>
+        <aside>
+          aside
+        </aside>
+      </div>
+
     </div>
   )
 }
