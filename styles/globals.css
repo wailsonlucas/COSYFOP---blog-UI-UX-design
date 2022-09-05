@@ -4,23 +4,23 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background:#eee
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  text-decoration: none
 }
-
+ul {
+  list-style: none;
+}
 * {
   box-sizing: border-box;
+  padding:0;
+  margin:0
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+:root {
+  --prime: #D4342C;
+  --i: #16213E;
+  --a: #1B2430;
 }
