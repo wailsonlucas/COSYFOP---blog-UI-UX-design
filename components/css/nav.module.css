@@ -29,15 +29,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color:var(--i);
-  border:1px solid lightgrey;
+  color:var(--prime);
   border-bottom: none;
   border-top: none;
   border-right: none;
   height: 100%;
   width:40px;
 }
-.top_nav .socials_container i:last-child { border-right:1px solid lightgrey}
 .title_container {
   display: flex;
   justify-content: center;
@@ -45,13 +43,13 @@
   height: 120px;
 }
 .title_container img {
-  height: 80%;
+  height: 100%;
 }
 .bottom_nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height:70px;
+  height:60px;
   padding:0 10%;
   background-color: #0F0E0E
 }

@@ -12,11 +12,7 @@ export default function Nav() {
           <Link href="/"><a>Business</a></Link>
         </div>
         <div className={s.socials_container}>
-          <i className="fa-brands fa-facebook-f"></i>
-          <i className="fa-brands fa-twitter"></i>
-          <i className="fa-brands fa-google-plus-g"></i>
-          <i className="fa-brands fa-instagram"></i>
-          <i className="fa-brands fa-youtube"></i>
+          <i class="fa-solid fa-phone"></i><span>  +213 456 789 159</span>
         </div>
       </div>
       <div className={s.title_container}>

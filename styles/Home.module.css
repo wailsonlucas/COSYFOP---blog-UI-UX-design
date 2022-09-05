@@ -1,0 +1,44 @@
+.home > header {
+  display: flex;
+  height:400px;
+}
+.home header > div {
+  position: relative;
+  width:50%;
+}
+.header_child img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.header_child::before {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.2)
+}
+.header_child .content {
+  position: absolute;
+  bottom:5%;
+  left:5%;
+}
+.header_child .header {
+  display: inline-block;
+  background:var(--prime);
+  color:#fff;
+  padding:5px 10px;
+}
+.header_child .content > p {
+  font-size: 24px;
+  color:#fff;
+  margin:8px 0;
+}
+.header_child .content footer {
+  color:#fff
+}
+.header_child .content footer span:last-child {
+  margin-left:10px
+}
