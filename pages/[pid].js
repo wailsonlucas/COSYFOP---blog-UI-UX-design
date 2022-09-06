@@ -6,7 +6,6 @@ import Footer from "../components/Footer"
 import Aside from "../components/Aside"
 
 export default function PostView({ post }) {
-  console.log(post)
   return (
     <div>
       <Nav />
@@ -14,7 +13,7 @@ export default function PostView({ post }) {
         <main>
           <b className={s.post_title}>{post.title}</b>
           <div className={s.post_content}>
-            content
+            {post.content}
           </div>
 
           <div className={s.simular_posts}>

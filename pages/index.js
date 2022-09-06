@@ -41,8 +41,8 @@ export default function Home() {
           <p>Trending Posts</p>
         </header>
         <main>
-
-          <div className={s.trending_post}>
+          <Link href="/1">
+          <a  className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t1.jpg"} alt="" />
             </div>
@@ -59,9 +59,11 @@ export default function Home() {
               <span> 33</span>
             </div>
             </footer>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.trending_post}>
+          <Link href="/2">
+          <a className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t2.jpg"} alt="" />
             </div>
@@ -78,9 +80,11 @@ export default function Home() {
               <span> 33</span>
             </div>
             </footer>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.trending_post}>
+          <Link href="/3">
+          <a className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t3.jpg"} alt="" />
             </div>
@@ -97,9 +101,11 @@ export default function Home() {
               <span> 33</span>
             </div>
             </footer>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.trending_post}>
+          <Link href="/4">
+          <a className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t4.jpg"} alt="" />
             </div>
@@ -116,7 +122,8 @@ export default function Home() {
               <span> 33</span>
             </div>
             </footer>
-          </div>
+          </a>
+          </Link>
         </main>
       </div>
 
