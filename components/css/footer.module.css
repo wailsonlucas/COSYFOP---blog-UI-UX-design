@@ -1,0 +1,160 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  min-height:100vh;
+  background: var(--d);
+  color:#fff;
+  padding:0 var(--sideMargin);
+}
+/* ------------------ first div */
+.footer > div {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding-top:40px
+}
+.footer > div > div {
+  width:30%;
+}
+.img_cont {
+  text-align: center;
+}
+.img_cont img {
+  height:120px;
+}
+.footer_desc {
+  color:grey;
+  margin:20px 0;
+  line-height: 30px;
+}
+.footer_socials {
+  display: flex;
+  height:30px;
+}
+.footer_socials a {
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 4px;
+  color:#fff;
+  font-size: 14px
+}
+.side_socials_fb  {
+  background: #4267B2
+}
+.side_socials_twitter  {
+  background: #1DA1F2
+}
+.side_socials_googlePlus {
+  background: #db4a39
+}
+.side_socials_instagram {
+  background: var(--prime)
+}
+.side_socials_youtube {
+  background: #FF0000
+}
+.side_socials_rss{
+  background: #ee802f
+}
+/* ------------- footer new letter */
+.footer_newsletter {
+  display: flex;
+  flex-direction: column;
+  margin:40px 0;
+}
+.footer_newsletter b {
+  font-size: 20px;
+}
+.footer_newsletter input {
+  margin:10px 0;
+  border:1px solid #fff;
+  border-radius:0;
+  outline:0;
+  width:100%;
+  padding:10px;
+  color:grey;
+  background:0;
+}
+.footer_newsletter button {
+  background-color: var(--prime);
+  color:#fff;
+  border:0;
+  padding:10px 0;
+}
+.featurde_posts .card {
+  display: flex;
+  height:60px;
+  margin:22px 0;
+}
+.featurde_posts .card .img_container {
+  height:100%;
+  width:60px;
+  margin-right:10px
+}
+.featurde_posts .card .img_container img {
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+.featurde_posts p {
+  padding:4px 0
+}
+.featurde_posts footer {
+  color:grey;
+  font-size: 14px;
+}
+/* ------------ instagrame pictues */
+.insta_pictures > div {
+  display: flex;
+  flex-wrap:wrap;
+  margin-top:10px
+}
+.insta_pictures .img_cont {
+  margin:2px;
+  height:60px;
+  width:22%;
+}
+.insta_pictures .img_cont img {
+  height:100%;
+  width:100%;
+  object-fit: cover
+}
+/* ------------ last_tweet  */
+.last_tweet {
+  margin-top:30px
+}
+.last_tweet > div {
+  display: flex;
+  align-items: center;
+  margin-top:20px;
+  line-height: 25px
+}
+.last_tweet span {
+  text-decoration: underline;
+}
+.last_tweet i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:60px;
+  width:140px;
+  background:#1DA1F2;
+  color:#fff;
+  border-radius:50%;
+  margin-right:10px;
+}
+/* -------- section */
+.footer section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:40px 0;
+  border-top:1px solid grey
+}
+.footer section a {
+  color:#fff;
+  margin:0 10px
+}

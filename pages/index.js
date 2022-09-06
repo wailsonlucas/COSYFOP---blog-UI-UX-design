@@ -2,6 +2,7 @@ import s from '../styles/Home.module.css'
 import Link from "next/link"
 //components
 import Nav from "../components/Nav"
+import Footer from "../components/Footer"
 
 export default function Home() {
   return (
@@ -321,6 +322,7 @@ export default function Home() {
         </aside>
       </div>
 
+    <Footer />
     </div>
   )
 }
