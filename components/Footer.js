@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
         <div>
           <div className={s.insta_pictures}>
-            <b>INSTAGRAM PICTURES</b>
+            <b>INSTAGRAM PICTURES </b>
             <div>
               <div className={s.img_cont}>
                 <img src={"/images/static/a.jpg"} alt="" />

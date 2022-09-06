@@ -50,11 +50,11 @@ export default function Home() {
             </div>
             <footer>
             <div>
-              <i class="fa-regular fa-clock"></i>
+              <i className="fa-regular fa-clock"></i>
               <span> Aug 19, 2022</span>
             </div>
             <div>
-              <i class="fa-solid fa-comment"></i>
+              <i className="fa-solid fa-comment"></i>
               <span> 33</span>
             </div>
             </footer>
@@ -69,11 +69,11 @@ export default function Home() {
             </div>
             <footer>
             <div>
-              <i class="fa-regular fa-clock"></i>
+              <i className="fa-regular fa-clock"></i>
               <span> Aug 19, 2022</span>
             </div>
             <div>
-              <i class="fa-solid fa-comment"></i>
+              <i className="fa-solid fa-comment"></i>
               <span> 33</span>
             </div>
             </footer>
@@ -88,11 +88,11 @@ export default function Home() {
             </div>
             <footer>
             <div>
-              <i class="fa-regular fa-clock"></i>
+              <i className="fa-regular fa-clock"></i>
               <span> Aug 19, 2022</span>
             </div>
             <div>
-              <i class="fa-solid fa-comment"></i>
+              <i className="fa-solid fa-comment"></i>
               <span> 33</span>
             </div>
             </footer>
@@ -107,11 +107,11 @@ export default function Home() {
             </div>
             <footer>
             <div>
-              <i class="fa-regular fa-clock"></i>
+              <i className="fa-regular fa-clock"></i>
               <span> Aug 19, 2022</span>
             </div>
             <div>
-              <i class="fa-solid fa-comment"></i>
+              <i className="fa-solid fa-comment"></i>
               <span> 33</span>
             </div>
             </footer>
