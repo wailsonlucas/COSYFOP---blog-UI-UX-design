@@ -51,7 +51,7 @@
   align-items: center;
   height:60px;
   padding:0 10%;
-  background-color: #0F0E0E
+  background-color: var(--d)
 }
 .bottom_nav ul {
   display: flex;
