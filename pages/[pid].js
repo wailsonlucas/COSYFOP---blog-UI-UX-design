@@ -1,14 +1,39 @@
-
+// css
+import s from "../styles/postView.module.css"
 //components
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
+import Aside from "../components/Aside"
 
 export default function PostView({ post }) {
   console.log(post)
   return (
     <div>
       <Nav />
-      {post.title}
+      <div className={s.postView_body}>
+        <main>
+          <b className={s.post_title}>{post.title}</b>
+          <div className={s.post_content}>
+            content
+          </div>
+
+          <div className={s.simular_posts}>
+            <section><p>SIMULAR POSTS</p></section>
+            <div>
+              <div className={s.simular_post}>
+                <div className={s.img_cont}>
+                  <img src={"/images/static/a.jpg"} alt="" />
+                </div>
+                <b>Simular Post Title</b>
+                <footer>
+                  <span>Aug 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </main>
+        <Aside />
+      </div>
       <Footer />
     </div>
   )

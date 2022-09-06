@@ -1,0 +1,57 @@
+.postView_body {
+  display: flex;
+  padding:0 var(--sideMargin);
+  margin-top:20px
+}
+.postView_body main {
+  width:70%;
+  margin-right:20px;
+}
+/* _________________________ Psot _________________________ */
+.post_title {
+  font-size: 40px;
+}
+.post_content {
+  margin:40px 0;
+  margin-left:20px;
+}
+/* _________________________ simular_posts _________________________ */
+.simular_posts > div {
+  display: flex;
+  justify-content: space-between;
+}
+.simular_posts section {
+  border-bottom:1px solid var(--i);
+  margin-bottom: 20px;
+}
+.simular_posts section p {
+  display: inline-block;
+  background: var(--d);
+  color:#fff;
+  padding:8px 14px;
+}
+.simular_post {
+  display: flex;
+  flex-direction: column;
+  height:250px;
+  width: 240px;
+}
+.simular_post b {
+  flex-grow: 1;
+  margin:4px 0
+}
+.simular_post footer {
+  padding:6px 0
+}
+.simular_post .img_cont {
+  height:70%
+}
+.simular_post .img_cont img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.simular_post footer {
+  font-size: 14px;
+  color:grey
+}
