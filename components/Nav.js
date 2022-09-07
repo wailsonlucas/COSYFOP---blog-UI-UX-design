@@ -17,7 +17,7 @@ export default function Nav() {
           <Link href="/friendly-organisations"><a>FÉDÉRATIONS SYNDICALES</a></Link>
           <Link href="/friendly-organisations"><a>BIBLIOTHÈQUE DES LOIS DU TRAVAIL</a></Link>
           <Link href="/friendly-organisations"><a>INTERNATIONALES</a></Link>
-          <Link href="/contact"><a>NOUS CNTACTER</a></Link>
+          <Link href="/contact"><a>NOUS CONTACTER</a></Link>
         </div>
         <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-bars"></i>
       </div>

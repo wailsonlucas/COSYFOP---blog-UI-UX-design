@@ -16,6 +16,9 @@ export default function PostView({ post }) {
       <Nav />
       <div className={s.postView_body}>
         <main>
+          <div className={s.img_cont}>
+            <img src={`/images/static/${post.filename}`} alt="" />
+          </div>
           <b className={s.post_title}>{post.title}</b>
           <div className={s.post_content}>
             {post.content}

@@ -17,7 +17,7 @@ export default function Home() {
     </Head>
       <Nav />
       <header>
-        <Link href="/5">
+        <Link href="/1">
         <a className={s.header_child}>
           <img src={"/images/static/a.jpg"} alt="" />
           <div className={s.content}>
@@ -31,7 +31,7 @@ export default function Home() {
           </div>
         </a>
         </Link>
-        <Link href="/6">
+        <Link href="/2">
         <a className={s.header_child}>
           <img src={"/images/static/b.jpg"} alt="" />
           <div className={s.content}>
@@ -52,7 +52,7 @@ export default function Home() {
           <p>Articles Tendance</p>
         </header>
         <main>
-          <Link href="/1">
+          <Link href="/3">
           <a  className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t1.jpg"} alt="" />
@@ -73,7 +73,7 @@ export default function Home() {
           </a>
           </Link>
 
-          <Link href="/2">
+          <Link href="/4">
           <a className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t2.jpeg"} alt="" />
@@ -94,7 +94,7 @@ export default function Home() {
           </a>
           </Link>
 
-          <Link href="/3">
+          <Link href="/5">
           <a className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t3.jpg"} alt="" />
@@ -115,7 +115,7 @@ export default function Home() {
           </a>
           </Link>
 
-          <Link href="/4">
+          <Link href="/6">
           <a className={s.trending_post}>
             <div className={s.img_container}>
               <img src={"/images/static/t4.jpg"} alt="" />

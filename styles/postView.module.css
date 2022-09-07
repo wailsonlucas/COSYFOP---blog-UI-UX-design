@@ -8,12 +8,19 @@
   margin-right:20px;
 }
 /* _________________________ Post _________________________ */
+.postView_body .img_cont  {
+  height:250px;
+}
+.postView_body .img_cont img {
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
 .post_title {
   font-size: 40px;
 }
 .post_content {
   margin:40px 0;
-  margin-left:20px;
   line-height: 25px;
   color:var(--g)
 }
