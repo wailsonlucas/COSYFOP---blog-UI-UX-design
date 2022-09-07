@@ -11,6 +11,7 @@ export default function PostView({ post }) {
     <div>
     <Head>
       <title>COSYFOP</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
       <Nav />
       <div className={s.postView_body}>
