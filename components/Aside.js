@@ -24,9 +24,9 @@ export default function Aside() {
       </div>
 
       <div className={s.news_letter}>
-        <p>Lettre D'information</p>
+        <p>Lettre D&#39;information</p>
         <input placeholder="Entrer votre Email" />
-        <button>S'Abonner</button>
+        <button>S&#39;Abonner</button>
       </div>
 
       <div className={s.aside_slideShow}>

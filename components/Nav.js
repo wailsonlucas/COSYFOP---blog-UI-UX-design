@@ -28,7 +28,7 @@ export default function Nav() {
       {sideMenu&&
         <div className={s.bottom_nav}>
           <ul>
-            <li><Link href="/">APPEL A L'ACTION</Link></li>
+            <li><Link href="/">APPEL A L&#39;ACTION</Link></li>
             <li><Link href="/">DROITS SYNDICAUX</Link></li>
             <li><Link href="/">ENJEUX</Link></li>
             <li><Link href="/">SECTEUR</Link></li>

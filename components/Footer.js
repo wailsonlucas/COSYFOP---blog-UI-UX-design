@@ -21,7 +21,7 @@ export default function Footer() {
             <Link href="/"><a className={s.side_socials_rss}><i className="fa-solid fa-rss"></i></a></Link>
           </div>
           <div className={s.footer_newsletter}>
-            <b>Lettre D'information</b>
+            <b>Lettre D&#39;information</b>
             <input placeholder="Entrer votre Email" />
             <button>Subscribe</button>
           </div>
