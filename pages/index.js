@@ -9,7 +9,7 @@ import Aside from "../components/Aside"
 
 
 export default function Home() {
-  
+
   return (
     <div className={s.home}>
       <Nav />
@@ -23,7 +23,7 @@ export default function Home() {
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris</p>
             <footer>
-              <span>Aug 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
+              <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
             </footer>
           </div>
         </a>
@@ -37,7 +37,7 @@ export default function Home() {
             </div>
             <p>Sed efficitur est. Proin egestas mi nec ex consequat, vel viverra lorem </p>
             <footer>
-              <span>Aug 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
+              <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
             </footer>
           </div>
         </a>
@@ -46,7 +46,7 @@ export default function Home() {
 
       <div className={s.trending_posts}>
         <header>
-          <p>Trending Posts</p>
+          <p>Articles Tendance</p>
         </header>
         <main>
           <Link href="/1">
@@ -60,7 +60,7 @@ export default function Home() {
             <footer>
             <div>
               <i className="fa-regular fa-clock"></i>
-              <span> Aug 19, 2022</span>
+              <span> Jan 19, 2022</span>
             </div>
             <div>
               <i className="fa-solid fa-comment"></i>
@@ -73,7 +73,7 @@ export default function Home() {
           <Link href="/2">
           <a className={s.trending_post}>
             <div className={s.img_container}>
-              <img src={"/images/static/t2.jpg"} alt="" />
+              <img src={"/images/static/t2.jpeg"} alt="" />
             </div>
             <div className={s.content}>
               Lorem ipsum dolor sit amet, consectetur
@@ -81,7 +81,7 @@ export default function Home() {
             <footer>
             <div>
               <i className="fa-regular fa-clock"></i>
-              <span> Aug 19, 2022</span>
+              <span> Jan 19, 2022</span>
             </div>
             <div>
               <i className="fa-solid fa-comment"></i>
@@ -102,7 +102,7 @@ export default function Home() {
             <footer>
             <div>
               <i className="fa-regular fa-clock"></i>
-              <span> Aug 19, 2022</span>
+              <span> Jan 19, 2022</span>
             </div>
             <div>
               <i className="fa-solid fa-comment"></i>
@@ -123,7 +123,7 @@ export default function Home() {
             <footer>
             <div>
               <i className="fa-regular fa-clock"></i>
-              <span> Aug 19, 2022</span>
+              <span> Jan 19, 2022</span>
             </div>
             <div>
               <i className="fa-solid fa-comment"></i>
@@ -137,7 +137,7 @@ export default function Home() {
 
       <div className={s.intro}>
           <div>
-            <p className={s.shade}>What we are looking for</p>
+            <p className={s.shade}>Pourquoi nous sommes ici ?</p>
             <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
             <p className={s.desc}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
           </div>
@@ -147,7 +147,7 @@ export default function Home() {
       <div className={s.intro}>
       <img src={"/images/static/j2.jpg"} alt="" />
           <div>
-            <p className={s.shade}>What we are looking for</p>
+            <p className={s.shade}>C'est notre vision !</p>
             <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
             <p className={s.desc}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
           </div>
@@ -164,7 +164,7 @@ export default function Home() {
               <p className={s.tag}>News</p>
               <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
               <p className={s.desc}>
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -182,7 +182,7 @@ export default function Home() {
               <p className={s.tag}>News</p>
               <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
               <p className={s.desc}>
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -200,7 +200,7 @@ export default function Home() {
               <p className={s.tag}>News</p>
               <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
               <p className={s.desc}>
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -218,7 +218,7 @@ export default function Home() {
               <p className={s.tag}>News</p>
               <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
               <p className={s.desc}>
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -236,7 +236,7 @@ export default function Home() {
               <p className={s.tag}>News</p>
               <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
               <p className={s.desc}>
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -254,7 +254,7 @@ export default function Home() {
               <p className={s.tag}>News</p>
               <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
               <p className={s.desc}>
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

@@ -8,11 +8,11 @@ export default function Aside() {
 
       <div className={s.ad_zone}>
         <i className="fa-solid fa-bullhorn"></i>
-        <p>Ads space</p>
+        <p>Espace Publicitaire</p>
       </div>
 
       <div className={s.side_socials}>
-        <section>STAY CONNECTED</section>
+        <section>Rester Connecté</section>
         <div>
           <Link href="/"><a className={s.side_socials_fb}><i className="fa-brands fa-facebook-f"></i></a></Link>
           <Link href="/"><a className={s.side_socials_twitter}><i className="fa-brands fa-twitter"></i></a></Link>
@@ -24,9 +24,9 @@ export default function Aside() {
       </div>
 
       <div className={s.news_letter}>
-        <p>new letter</p>
-        <input placeholder="Enter your Email" />
-        <button>Subscribe</button>
+        <p>Lettre D'information</p>
+        <input placeholder="Entrer votre Email" />
+        <button>S'Abonner</button>
       </div>
 
       <div className={s.aside_slideShow}>
@@ -36,7 +36,7 @@ export default function Aside() {
           </div>
           <p>Ttile</p>
           <footer>
-            <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+            <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
           </footer>
         </div>
       </div>
@@ -46,37 +46,45 @@ export default function Aside() {
           <div className={s.img_container}>
             <img src={"/images/static/a.jpg"} alt="" />
           </div>
+            <div>
           <div className={s.title}>Title</div>
           <footer>
-            <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+            <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
           </footer>
+          </div>
         </div>
         <div className={s.card}>
           <div className={s.img_container}>
             <img src={"/images/static/b.jpg"} alt="" />
           </div>
+            <div>
             <div className={s.title}>Title</div>
             <footer>
-              <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+              <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
+            </div>
         </div>
         <div className={s.card}>
           <div className={s.img_container}>
             <img src={"/images/static/t1.jpg"} alt="" />
           </div>
+            <div>
             <div className={s.title}>Title</div>
             <footer>
-              <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+              <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
+            </div>
         </div>
         <div className={s.card}>
           <div className={s.img_container}>
             <img src={"/images/static/t2.jpg"} alt="" />
           </div>
+            <div>
             <div className={s.title}>Title</div>
             <footer>
-              <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+              <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
+            </div>
         </div>
       </div>
 

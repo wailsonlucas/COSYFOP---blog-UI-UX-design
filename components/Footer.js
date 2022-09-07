@@ -10,7 +10,7 @@ export default function Footer() {
             <img src={"/images/static/logo.png"} className={s.footer_logo} alt="" />
           </div>
           <div className={s.footer_desc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            L’Internationale des Services Publics rassemble plus de 20 millions de travailleurs/euses, représentés par plus de 700 syndicats dans 163 pays et territoires. Nous sommes une fédération syndicale internationale qui se consacre à la promotion des services publics de qualité partout dans le monde.
           </div>
           <div className={s.footer_socials}>
             <Link href="/"><a className={s.side_socials_fb}><i className="fa-brands fa-facebook-f"></i></a></Link>
@@ -21,14 +21,13 @@ export default function Footer() {
             <Link href="/"><a className={s.side_socials_rss}><i className="fa-solid fa-rss"></i></a></Link>
           </div>
           <div className={s.footer_newsletter}>
-            <b>New letter</b>
-            <input placeholder="Enter your email" />
+            <b>Lettre D'information</b>
+            <input placeholder="Entrer votre Email" />
             <button>Subscribe</button>
           </div>
         </div>
         <div className={s.featurde_posts}>
-          <b>FEATURED POSTS</b>
-
+          <b>Articles en Vedette</b>
           <div className={s.card}>
             <div className={s.img_container}>
               <img src={"/images/static/j1.jpg"} alt="" />
@@ -36,7 +35,7 @@ export default function Footer() {
             <div>
               <b>Title</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
             </div>
           </div>
@@ -48,7 +47,7 @@ export default function Footer() {
             <div>
               <b>Title</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
             </div>
           </div>
@@ -60,7 +59,7 @@ export default function Footer() {
             <div>
               <b>Title</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
             </div>
           </div>
@@ -72,7 +71,7 @@ export default function Footer() {
             <div>
               <b>Title</b>
               <footer>
-                <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
               </footer>
             </div>
           </div>
@@ -80,7 +79,7 @@ export default function Footer() {
         </div>
         <div>
           <div className={s.insta_pictures}>
-            <b>INSTAGRAM PICTURES </b>
+            <b>Photos Instagram </b>
             <div>
               <div className={s.img_cont}>
                 <img src={"/images/static/a.jpg"} alt="" />
@@ -110,7 +109,7 @@ export default function Footer() {
             </div>
           </div>
           <div className={s.last_tweet}>
-            <b>LATEST TWEET</b>
+            <b>Dernier Tweet</b>
             <div>
               <i className="fa-brands fa-twitter"></i>
               <p><span>@Lorem_ipsum</span> dolor sit amet, consectetur adipiscing elit, sed do @<span>eiusmod</span> tempor</p>
@@ -119,7 +118,7 @@ export default function Footer() {
         </div>
       </div>
       <section>
-        <div>Copyright ©2022 All rights reserved | This template is made with by Wailson Lucas</div>
+        <div>Copyright ©2022 Tous droits réservés | Ce site a été réalisé par<a className={s.footer_twitter_redirect}href="https://twitter.com/BeforecodeDev">Wailson Lucas</a></div>
         <div>
           <Link href="/">Home</Link>
           <Link href="/">About us</Link>

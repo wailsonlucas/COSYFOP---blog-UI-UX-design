@@ -106,6 +106,9 @@
   color:grey;
   font-size: 14px;
 }
+.footer section .footer_twitter_redirect {
+  text-decoration: underline;
+}
 /* ------------ instagrame pictues */
 .insta_pictures > div {
   display: flex;

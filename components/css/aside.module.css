@@ -146,6 +146,11 @@
   width: 100%;
   object-fit: cover;
 }
+.aside_trending .card {
+  display: flex;
+  height:100px;
+  margin:22px 0;
+}
 .aside_trending p {
   padding:4px 0
 }
@@ -160,12 +165,11 @@
   }
   .aside_trending .card {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 350px;
   }
   .aside_trending .card .img_container {
     width:100%;
-    margin-bottom:10px;
     height:70%;
   }
   .aside_trending .card .title {
