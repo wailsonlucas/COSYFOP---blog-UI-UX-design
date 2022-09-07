@@ -1,3 +1,5 @@
+import Head from "next/head"
+import Link from "next/link"
 // css
 import f from "../styles/friendly_organisations.module.css"
 import g from "../styles/global_static_routes.module.css"
@@ -9,6 +11,9 @@ import Aside from "../components/Aside"
 export default function About() {
   return (
     <div>
+    <Head>
+      <title>COSYFOP | Organisation Amies</title>
+    </Head>
       <Nav />
       <div className={g.static_route}>
         <main>
@@ -27,7 +32,7 @@ export default function About() {
               <div className={f.content}>
                 <h3>Organisation Amie 1</h3>
                 <p>Veuillez utiliser les filtres ci-dessous pour afficher nos organisations affiliées par région, sous-région et/ou pays et/ou territoires</p>
-                <div>visite à <a href="/">www.org-1.com</a></div>
+                <div>visite à <Link href="/">www.org-1.com</Link></div>
               </div>
             </div>
 
@@ -39,7 +44,7 @@ export default function About() {
               <div className={f.content}>
                 <h3>Organisation Amie 2</h3>
                 <p>Veuillez utiliser les filtres ci-dessous pour afficher nos organisations affiliées par région, sous-région et/ou pays et/ou territoires</p>
-                <div>visite à <a href="/">www.org-2.com</a></div>
+                <div>visite à <Link href="/">www.org-2.com</Link></div>
               </div>
             </div>
 
@@ -50,7 +55,7 @@ export default function About() {
               <div className={f.content}>
                 <h3>Organisation Amie 3</h3>
                 <p>Veuillez utiliser les filtres ci-dessous pour afficher nos organisations affiliées par région, sous-région et/ou pays et/ou territoires</p>
-                <div>visite à <a href="/">www.org-3.com</a></div>
+                <div>visite à <Link href="/">www.org-3.com</Link></div>
               </div>
             </div>
 
@@ -61,7 +66,7 @@ export default function About() {
               <div className={f.content}>
                 <h3>Organisation Amie 4</h3>
                 <p>Veuillez utiliser les filtres ci-dessous pour afficher nos organisations affiliées par région, sous-région et/ou pays et/ou territoires</p>
-                <div>visite à <a href="/">www.org-4.com</a></div>
+                <div>visite à <Link href="/">www.org-4.com</Link></div>
               </div>
             </div>
 

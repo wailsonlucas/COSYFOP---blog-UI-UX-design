@@ -1,7 +1,6 @@
-
-
-import s from '../styles/Home.module.css'
+import s from "../styles/Home.module.css"
 import Link from "next/link"
+import Head from "next/head"
 //components
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
@@ -12,6 +11,9 @@ export default function Home() {
 
   return (
     <div className={s.home}>
+    <Head>
+      <title>COSYFOP | Home page</title>
+    </Head>
       <Nav />
       <header>
         <Link href="/5">
@@ -147,7 +149,7 @@ export default function Home() {
       <div className={s.intro}>
       <img src={"/images/static/j2.jpg"} alt="" />
           <div>
-            <p className={s.shade}>C'est notre vision !</p>
+            <p className={s.shade}>C&#39;est notre vision !</p>
             <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
             <p className={s.desc}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
           </div>

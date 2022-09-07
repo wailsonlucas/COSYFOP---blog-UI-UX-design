@@ -1,3 +1,4 @@
+import Head from  "next/head"
 // css
 import s from "../styles/postView.module.css"
 //components
@@ -8,6 +9,9 @@ import Aside from "../components/Aside"
 export default function PostView({ post }) {
   return (
     <div>
+    <Head>
+      <title>COSYFOP</title>
+    </Head>
       <Nav />
       <div className={s.postView_body}>
         <main>

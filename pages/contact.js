@@ -1,3 +1,4 @@
+import Head from "next/head"
 // css
 import c from "../styles/contact.module.css"
 import g from "../styles/global_static_routes.module.css"
@@ -9,6 +10,9 @@ import Aside from "../components/Aside"
 export default function About() {
   return (
     <div className={c.contact}>
+    <Head>
+      <title>COSYFOP | Nous Contacter</title>
+    </Head>
       <Nav />
       <div className={g.static_route}>
         <main>
