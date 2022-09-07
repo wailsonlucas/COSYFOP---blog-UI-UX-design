@@ -26,7 +26,8 @@
   display: flex;
   padding:20px 0
 }
-.contact i {
+.top_contact i,
+.bottom_contact i {
   margin-right: 20px;
   margin-top:8px;
   color:var(--prime);

@@ -21,3 +21,29 @@
   width: 100%;
   background:rgba(0,0,0,.5)
 }
+.org {
+  display: flex;
+  height:140px;
+  margin:60px 0;
+}
+.org .img_cont {
+  height: 100%;
+  margin-right:20px;
+  width:140px !important;
+}
+.org .img_cont img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.org > .content {
+  flex-grow:1
+}
+.org p {
+  color:grey;
+  margin:10px 0;
+  font-size: 14px
+}
+.org a {
+  text-decoration: underline;
+}
