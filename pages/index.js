@@ -1,3 +1,5 @@
+
+
 import s from '../styles/Home.module.css'
 import Link from "next/link"
 //components
@@ -5,12 +7,15 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Aside from "../components/Aside"
 
+
 export default function Home() {
+  
   return (
     <div className={s.home}>
       <Nav />
       <header>
-        <div className={s.header_child}>
+        <Link href="/5">
+        <a className={s.header_child}>
           <img src={"/images/static/a.jpg"} alt="" />
           <div className={s.content}>
             <div className={s.header}>
@@ -21,8 +26,10 @@ export default function Home() {
               <span>Aug 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
             </footer>
           </div>
-        </div>
-        <div className={s.header_child}>
+        </a>
+        </Link>
+        <Link href="/6">
+        <a className={s.header_child}>
           <img src={"/images/static/b.jpg"} alt="" />
           <div className={s.content}>
             <div className={s.header}>
@@ -33,7 +40,8 @@ export default function Home() {
               <span>Aug 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
             </footer>
           </div>
-        </div>
+        </a>
+        </Link>
       </header>
 
       <div className={s.trending_posts}>
@@ -147,7 +155,8 @@ export default function Home() {
 
       <div className={s.body}>
         <main className={s.bodyMain}>
-          <div className={s.card}>
+          <Link href="/7">
+          <a className={s.card}>
             <div className={s.img_container}>
               <img src={"/images/static/b.jpg"} alt="" />
             </div>
@@ -161,9 +170,11 @@ export default function Home() {
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               </p>
             </div>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.card}>
+          <Link href="/8">
+          <a className={s.card}>
             <div className={s.img_container}>
               <img src={"/images/static/b.jpg"} alt="" />
             </div>
@@ -177,9 +188,11 @@ export default function Home() {
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               </p>
             </div>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.card}>
+          <Link href="/8">
+          <a className={s.card}>
             <div className={s.img_container}>
               <img src={"/images/static/b.jpg"} alt="" />
             </div>
@@ -193,9 +206,11 @@ export default function Home() {
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               </p>
             </div>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.card}>
+          <Link href="/9">
+          <a className={s.card}>
             <div className={s.img_container}>
               <img src={"/images/static/b.jpg"} alt="" />
             </div>
@@ -209,9 +224,11 @@ export default function Home() {
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               </p>
             </div>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.card}>
+          <Link href="/10">
+          <a className={s.card}>
             <div className={s.img_container}>
               <img src={"/images/static/b.jpg"} alt="" />
             </div>
@@ -225,9 +242,11 @@ export default function Home() {
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               </p>
             </div>
-          </div>
+          </a>
+          </Link>
 
-          <div className={s.card}>
+          <Link href="/11">
+          <a className={s.card}>
             <div className={s.img_container}>
               <img src={"/images/static/b.jpg"} alt="" />
             </div>
@@ -241,7 +260,8 @@ export default function Home() {
                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               </p>
             </div>
-          </div>
+          </a>
+          </Link>
         </main>
         <Aside />
       </div>

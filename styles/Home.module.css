@@ -2,7 +2,7 @@
   display: flex;
   height:400px;
 }
-.home header > div {
+.home header > a {
   position: relative;
   width:50%;
 }
@@ -172,4 +172,11 @@
 }
 .bosyMain_card_content .desc {
   color:var(--g)
+}
+
+/* ____________________ media queries ____________________ */
+@media (max-width: 600px) {
+  .home header {
+    /* display: none; */
+  }
 }

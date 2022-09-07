@@ -1,7 +1,13 @@
+import { useDispatch, useSelector } from "react-redux"
+
 import s from "./css/nav.module.css"
 import Link from "next/link"
+//Actions
+import { triggerSideMenu } from "../reducers/ActionsCreator"
 
 export default function Nav() {
+  const dispatch = useDispatch()
+  let { sideMenu } = useSelector(state => state.MainReducer)
   return (
     <nav className={s.nav}>
       <div className={s.top_nav}>
@@ -14,22 +20,25 @@ export default function Nav() {
         <div className={s.socials_container}>
           <i className="fa-solid fa-phone"></i><span>  +213 456 789 159</span>
         </div>
+        <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-bars"></i>
       </div>
       <div className={s.title_container}>
         <img src={"images/static/logo.png"} alt="" />
       </div>
-      <div className={s.bottom_nav}>
-        <ul>
-          <li className={s.home_a}><Link href="/">Home</Link></li>
-          <li><Link href="/">News</Link></li>
-          <li><Link href="/">Sport</Link></li>
-          <li><Link href="/">Life Style</Link></li>
-          <li><Link href="/">Business</Link></li>
-        </ul>
-        <div className={s.nav_search_container}>
-          <i className="fa-solid fa-magnifying-glass"></i>
+      {sideMenu&&
+        <div className={s.bottom_nav}>
+          <ul>
+            <li className={s.home_a}><Link href="/">Home</Link></li>
+            <li><Link href="/">News</Link></li>
+            <li><Link href="/">Sport</Link></li>
+            <li><Link href="/">Life Style</Link></li>
+            <li><Link href="/">Business</Link></li>
+          </ul>
+          <div className={s.burger}>
+            <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-xmark"></i>
+          </div>
         </div>
-      </div>
+      }
     </nav>
   )
 }
