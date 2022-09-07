@@ -21,3 +21,44 @@
   width: 100%;
   background:rgba(0,0,0,.5)
 }
+.top_contact * {border:1px solid re}
+.top_contact {
+  display: flex;
+  padding:20px 0
+}
+.contact i {
+  margin-right: 20px;
+  margin-top:8px;
+  color:var(--prime);
+  font-size: 26px
+}
+.top_contact > div {
+  flex:1;
+  display:flex;
+}
+.top_contact > div > div {
+  flex-grow:1;
+}
+.all_inputs {
+  display: block;
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  outline: none;
+  color:var(--g)
+}
+.bottom_contact {
+  display: flex;
+  border-top:1px solid grey;
+  padding-top:20px;
+  margin-top:20px;
+}
+.bottom_contact > div {
+  flex-grow: 1
+}
+.bottom_contact button {
+  color:#fff;
+  background:var(--prime);
+  border-radius:4px;
+  padding:10px 20px;
+}
