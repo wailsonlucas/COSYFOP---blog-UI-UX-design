@@ -34,7 +34,7 @@ export default function Aside() {
           <div className={s.img_container}>
             <img src={"/images/static/j1.jpg"} alt="" />
           </div>
-          <p>Ttile</p>
+          <p>Titre de l'article</p>
           <footer>
             <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
           </footer>
@@ -47,7 +47,7 @@ export default function Aside() {
             <img src={"/images/static/a.jpg"} alt="" />
           </div>
             <div>
-          <div className={s.title}>Title</div>
+          <div className={s.title}>Titre de l'article</div>
           <footer>
             <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
           </footer>
@@ -58,7 +58,7 @@ export default function Aside() {
             <img src={"/images/static/b.jpg"} alt="" />
           </div>
             <div>
-            <div className={s.title}>Title</div>
+            <div className={s.title}>Titre de l'article</div>
             <footer>
               <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
@@ -69,7 +69,7 @@ export default function Aside() {
             <img src={"/images/static/t1.jpg"} alt="" />
           </div>
             <div>
-            <div className={s.title}>Title</div>
+            <div className={s.title}>Titre de l'article</div>
             <footer>
               <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
@@ -77,10 +77,10 @@ export default function Aside() {
         </div>
         <div className={s.card}>
           <div className={s.img_container}>
-            <img src={"/images/static/t2.jpg"} alt="" />
+            <img src={"/images/static/t2.jpeg"} alt="" />
           </div>
             <div>
-            <div className={s.title}>Title</div>
+            <div className={s.title}>Titre de l'article</div>
             <footer>
               <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>

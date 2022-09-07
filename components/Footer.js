@@ -54,7 +54,7 @@ export default function Footer() {
 
           <div className={s.card}>
             <div className={s.img_container}>
-              <img src={"/images/static/t2.jpg"} alt="" />
+              <img src={"/images/static/t2.jpeg"} alt="" />
             </div>
             <div>
               <b>Title</b>
@@ -98,7 +98,7 @@ export default function Footer() {
                 <img src={"/images/static/t1.jpg"} alt="" />
               </div>
               <div className={s.img_cont}>
-                <img src={"/images/static/t2.jpg"} alt="" />
+                <img src={"/images/static/t2.jpeg"} alt="" />
               </div>
               <div className={s.img_cont}>
                 <img src={"/images/static/t3.jpg"} alt="" />
