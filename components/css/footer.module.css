@@ -158,3 +158,20 @@
   color:#fff;
   margin:0 10px
 }
+@media (max-width:600px) {
+  .footer > div {
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    padding-top:40px;
+  }
+  .footer > div > div {
+    width:100%
+  }
+  .last_tweet i {
+    width:100px
+  }
+  .footer section {
+    margin-top:20px
+  }
+}

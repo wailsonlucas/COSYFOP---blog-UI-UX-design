@@ -46,45 +46,37 @@ export default function Aside() {
           <div className={s.img_container}>
             <img src={"/images/static/a.jpg"} alt="" />
           </div>
-          <div>
-            <b>Title</b>
-            <footer>
-              <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-            </footer>
-          </div>
+          <div className={s.title}>Title</div>
+          <footer>
+            <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+          </footer>
         </div>
         <div className={s.card}>
           <div className={s.img_container}>
             <img src={"/images/static/b.jpg"} alt="" />
           </div>
-          <div>
-            <b>Title</b>
+            <div className={s.title}>Title</div>
             <footer>
               <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
-          </div>
         </div>
         <div className={s.card}>
           <div className={s.img_container}>
             <img src={"/images/static/t1.jpg"} alt="" />
           </div>
-          <div>
-            <b>Title</b>
+            <div className={s.title}>Title</div>
             <footer>
               <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
-          </div>
         </div>
         <div className={s.card}>
           <div className={s.img_container}>
             <img src={"/images/static/t2.jpg"} alt="" />
           </div>
-          <div>
-            <b>Title</b>
+            <div className={s.title}>Title</div>
             <footer>
               <span>Aug 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
-          </div>
         </div>
       </div>
 

@@ -176,7 +176,38 @@
 
 /* ____________________ media queries ____________________ */
 @media (max-width: 600px) {
-  .home header {
-    /* display: none; */
+  .trending_posts main {
+    flex-direction:column;
+    align-items: center;
+  }
+  .trending_posts main a {
+    width:100%;
+    margin-bottom:20px;
+  }
+  .intro {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+  .intro > div {
+    width:100%;
+  }
+  .intro > img {
+    width:100%;
+    margin:20px 0;
+  }
+  .body {
+    flex-direction: column;
+  }
+  .bodyMain {
+    width:100%;
+  }
+  .bodyMain .card {
+    flex-direction: column;
+    height: auto;
+  }
+  .bodyMain .card .img_container {
+    width:100%;
+    margin-bottom:10px
   }
 }
