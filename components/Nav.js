@@ -12,10 +12,10 @@ export default function Nav() {
     <nav className={s.nav}>
       <div className={s.top_nav}>
         <div className={s.links_container}>
-          <Link href="/"><a>A propos de nous</a></Link>
+          <Link href="/about"><a>A propos de nous</a></Link>
           <Link href="/"><a>Documents</a></Link>
-          <Link href="/"><a>Organisations Amies</a></Link>
-          <Link href="/"><a>Nous Contacter</a></Link>
+          <Link href="/friendly-organisations"><a>Organisations Amies</a></Link>
+          <Link href="/contact"><a>Nous Contacter</a></Link>
         </div>
         <div className={s.socials_container}>
           <i className="fa-solid fa-phone"></i><span>  +213 456 789 159</span>
