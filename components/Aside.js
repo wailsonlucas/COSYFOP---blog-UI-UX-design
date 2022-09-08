@@ -2,7 +2,7 @@ import s from "./css/aside.module.css"
 import Link from "next/link"
 
 
-export default function Aside() {
+export default function Aside({ randomPosts }) {
   return (
     <aside className={s.bodyAside}>
 
@@ -42,52 +42,23 @@ export default function Aside() {
       </div>
 
       <div className={s.aside_trending}>
-        <div className={s.card}>
-          <div className={s.img_container}>
-            <img src={"/images/static/a.jpg"} alt="" />
-          </div>
-            <div>
-          <div className={s.title}>Titre de l&#39;article</div>
-          <footer>
-            <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
-          </footer>
-          </div>
+        {
+          randomPosts&&randomPosts.map((rand, index) =>
+          <Link href={`/${rand.id}`}>
+            <a className={s.card}>
+              <div className={s.img_container}>
+                <img src={`/images/static/${rand.filename}`} alt="" />
+              </div>
+                <div>
+              <div className={s.title}>{rand.title.length > 30 ? rand.title.substring(0, 30) + "..." : rand.title}</div>
+              <footer>
+                <p><i className="fa-solid fa-calendar-days"></i>{new Date(rand.date).toDateString()}</p><p> <i className="fa-solid fa-eye"></i>{rand.views}</p>
+              </footer>
+              </div>
+            </a>
+          </Link>
+        )}
         </div>
-        <div className={s.card}>
-          <div className={s.img_container}>
-            <img src={"/images/static/b.jpg"} alt="" />
-          </div>
-            <div>
-            <div className={s.title}>Titre de l&#39;article</div>
-            <footer>
-              <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
-            </footer>
-            </div>
-        </div>
-        <div className={s.card}>
-          <div className={s.img_container}>
-            <img src={"/images/static/t1.jpg"} alt="" />
-          </div>
-            <div>
-            <div className={s.title}>Titre de l&#39;article</div>
-            <footer>
-              <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
-            </footer>
-            </div>
-        </div>
-        <div className={s.card}>
-          <div className={s.img_container}>
-            <img src={"/images/static/t2.jpeg"} alt="" />
-          </div>
-            <div>
-            <div className={s.title}>Titre de l&#39;article</div>
-            <footer>
-              <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
-            </footer>
-            </div>
-        </div>
-      </div>
-
     </aside>
   )
 }

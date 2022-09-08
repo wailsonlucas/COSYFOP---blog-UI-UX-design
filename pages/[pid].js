@@ -20,6 +20,9 @@ export default function PostView({ renderedPost, simPosts }) {
             <img src={`/images/static/${renderedPost.filename}`} alt="" />
           </div>
           <b className={s.post_title}>{renderedPost.title}</b>
+          <div className={s.renderedPost_metadata}>
+            <span><i className="fa-solid fa-calendar-days"></i>{new Date(renderedPost.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{renderedPost.views}</span>
+          </div>
           <div className={s.post_content}>
             {renderedPost.content}
           </div>

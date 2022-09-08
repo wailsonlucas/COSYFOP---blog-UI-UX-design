@@ -19,8 +19,15 @@
 .post_title {
   font-size: 40px;
 }
+.renderedPost_metadata {
+  color:grey;
+  font-size: 14px
+}
+.renderedPost_metadata i {
+  margin  :5px
+}
 .post_content {
-  margin:40px 0;
+  margin:20px 0;
   line-height: 25px;
   color:var(--g)
 }

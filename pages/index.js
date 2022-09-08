@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
-export default function Home({ sorted, trendingByViews }) {
+export default function Home({ sorted, trendingByViews, randomPosts }) {
   var settings = {
     dots: true,
     infinite: true,
@@ -35,7 +35,7 @@ export default function Home({ sorted, trendingByViews }) {
                 <div className={s.header}>
                   {post.tag}
                 </div>
-                <p>{post.title}</p>
+                <p>{post.title.length > 30 ? post.title.substring(0, 30) + "..." : post.title}</p>
                 <footer>
                   <span>{new Date(post.date).toDateString()}</span>
                 </footer>
@@ -52,7 +52,7 @@ export default function Home({ sorted, trendingByViews }) {
         <main>
           {
             trendingByViews&&trendingByViews.map((trend, index) =>
-            <Link key={index} href="/3">
+            <Link key={index} href={`/${trend.id}`}>
               <a  className={s.trending_post}>
                 <div className={s.img_container}>
                   <img src={`/images/static/${trend.filename}`} alt="" />
@@ -65,7 +65,7 @@ export default function Home({ sorted, trendingByViews }) {
                   <i className="fa-solid fa-calendar-days"></i>{new Date(trend.date).toDateString()}
                 </div>
                 <div>
-              <i className="fa-solid fa-eye"></i>{trend.views}
+                  <i className="fa-solid fa-eye"></i>{trend.views}
                 </div>
                 </footer>
               </a>
@@ -116,10 +116,10 @@ export default function Home({ sorted, trendingByViews }) {
             </Link>
         )}
         </main>
-        <Aside />
+        <Aside randomPosts={randomPosts} />
       </div>
 
-    <Footer />
+    <Footer randomPosts={randomPosts}/>
     </div>
   )
 }
@@ -127,7 +127,7 @@ export default function Home({ sorted, trendingByViews }) {
 export async function getStaticProps(){
   let {posts} = require("../localDB.json")
 
-  let sorted = posts.sort(
+  let sorted = [...posts].sort(
     function(a,b) {
       if(a.date > b.date) {
         return 1
@@ -139,18 +139,19 @@ export async function getStaticProps(){
     }
   )
 
-  let trendingByViews = posts.sort((a, b) => {
+  let trendingByViews = [...posts].sort((a, b) => {
     if(a.views > b.views) return -1
     if(a.views < b.views) return 1
     return 0
   }).slice(0, 4)
 
-  console.log(trendingByViews)
+  let randomPosts = [...posts].sort(() => .5 - Math.random()).slice(0,4)
 
   return {
     props: {
       sorted,
-      trendingByViews
+      trendingByViews,
+      randomPosts
     }
   }
 }

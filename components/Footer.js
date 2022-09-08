@@ -1,7 +1,7 @@
 import s from "./css/footer.module.css"
 import Link from "next/link"
 
-export default function Footer() {
+export default function Footer({ randomPosts }) {
   return (
     <div className={s.footer}>
       <div>
@@ -27,54 +27,24 @@ export default function Footer() {
           </div>
         </div>
         <div className={s.featurde_posts}>
-          <b>Articles en Vedette</b>
-          <div className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/j1.jpg"} alt="" />
-            </div>
-            <div>
-              <b>Title</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-            </div>
-          </div>
-
-          <div className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/j2.jpg"} alt="" />
-            </div>
-            <div>
-              <b>Title</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-            </div>
-          </div>
-
-          <div className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/t2.jpeg"} alt="" />
-            </div>
-            <div>
-              <b>Title</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-            </div>
-          </div>
-
-          <div className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div>
-              <b>Title</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-            </div>
-          </div>
+          <b>Articles Tendence</b>
+          {
+            randomPosts&&randomPosts.map((rand, index) =>
+              <Link href={`/${rand.id}`}>
+              <a key={index} className={s.card}>
+                <div className={s.img_container}>
+                  <img src={`/images/static/${rand.filename}`} alt="" />
+                </div>
+                <div>
+                  <p>{rand.title.length > 30 ? rand.title.substring(0, 30) + "..." : rand.title}</p>
+                  <footer>
+                    <p><i className="fa-solid fa-calendar-days"></i>{new Date(rand.date).toDateString()}</p>
+                    <p><i className="fa-solid fa-eye"></i>{rand.views}</p>
+                  </footer>
+                </div>
+              </a>
+              </Link>
+          )}
 
         </div>
         <div>
