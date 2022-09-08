@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
-export default function Home({ sorted }) {
+export default function Home({ sorted, trendingByViews }) {
   var settings = {
     dots: true,
     infinite: true,
@@ -50,89 +50,28 @@ export default function Home({ sorted }) {
           <p>Articles Tendance</p>
         </header>
         <main>
-          <Link href="/3">
-          <a  className={s.trending_post}>
-            <div className={s.img_container}>
-              <img src={"/images/static/t1.jpg"} alt="" />
-            </div>
-            <div className={s.content}>
-              Lorem ipsum dolor sit amet, consectetur
-            </div>
-            <footer>
-            <div>
-              <i className="fa-regular fa-clock"></i>
-              <span> Jan 19, 2022</span>
-            </div>
-            <div>
-              <i className="fa-solid fa-comment"></i>
-              <span> 33</span>
-            </div>
-            </footer>
-          </a>
-          </Link>
-
-          <Link href="/4">
-          <a className={s.trending_post}>
-            <div className={s.img_container}>
-              <img src={"/images/static/t2.jpeg"} alt="" />
-            </div>
-            <div className={s.content}>
-              Lorem ipsum dolor sit amet, consectetur
-            </div>
-            <footer>
-            <div>
-              <i className="fa-regular fa-clock"></i>
-              <span> Jan 19, 2022</span>
-            </div>
-            <div>
-              <i className="fa-solid fa-comment"></i>
-              <span> 33</span>
-            </div>
-            </footer>
-          </a>
-          </Link>
-
-          <Link href="/5">
-          <a className={s.trending_post}>
-            <div className={s.img_container}>
-              <img src={"/images/static/t3.jpg"} alt="" />
-            </div>
-            <div className={s.content}>
-              Lorem ipsum dolor sit amet, consectetur
-            </div>
-            <footer>
-            <div>
-              <i className="fa-regular fa-clock"></i>
-              <span> Jan 19, 2022</span>
-            </div>
-            <div>
-              <i className="fa-solid fa-comment"></i>
-              <span> 33</span>
-            </div>
-            </footer>
-          </a>
-          </Link>
-
-          <Link href="/6">
-          <a className={s.trending_post}>
-            <div className={s.img_container}>
-              <img src={"/images/static/t4.jpg"} alt="" />
-            </div>
-            <div className={s.content}>
-              Lorem ipsum dolor sit amet, consectetur
-            </div>
-            <footer>
-            <div>
-              <i className="fa-regular fa-clock"></i>
-              <span> Jan 19, 2022</span>
-            </div>
-            <div>
-              <i className="fa-solid fa-comment"></i>
-              <span> 33</span>
-            </div>
-            </footer>
-          </a>
-          </Link>
+          {
+            trendingByViews&&trendingByViews.map((trend, index) =>
+            <Link key={index} href="/3">
+              <a  className={s.trending_post}>
+                <div className={s.img_container}>
+                  <img src={`/images/static/${trend.filename}`} alt="" />
+                </div>
+                <div className={s.content}>
+                  {trend.title.length > 30 ? trend.title.substring(0, 30) + "..." : trend.title}
+                </div>
+                <footer>
+                <div>
+                  <i className="fa-solid fa-calendar-days"></i>{new Date(trend.date).toDateString()}
+                </div>
+                <div>
+              <i className="fa-solid fa-eye"></i>{trend.views}
+                </div>
+                </footer>
+              </a>
+            </Link>
+            )
+          }
         </main>
       </div>
 
@@ -187,8 +126,7 @@ export default function Home({ sorted }) {
 
 export async function getStaticProps(){
   let {posts} = require("../localDB.json")
-  // let datesArr = posts.map(post => post.date)
-  // let sorted = datesArr.sort().slice(0,4)
+
   let sorted = posts.sort(
     function(a,b) {
       if(a.date > b.date) {
@@ -200,9 +138,19 @@ export async function getStaticProps(){
       }
     }
   )
+
+  let trendingByViews = posts.sort((a, b) => {
+    if(a.views > b.views) return -1
+    if(a.views < b.views) return 1
+    return 0
+  }).slice(0, 4)
+
+  console.log(trendingByViews)
+
   return {
     props: {
-      sorted
+      sorted,
+      trendingByViews
     }
   }
 }

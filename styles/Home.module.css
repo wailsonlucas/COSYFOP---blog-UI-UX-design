@@ -69,6 +69,9 @@
   height:320px;
   width: 220px;
 }
+.trending_post i {
+  margin-right:5px
+}
 .trending_post .img_container {
   height:60%;
 }
@@ -85,7 +88,8 @@
 .trending_post footer {
   display: flex;
   align-items: center;
-  color:var(--g);
+  color:grey;
+  font-size: 10px;
   padding:8px 0;
   font-size:14px
 }
