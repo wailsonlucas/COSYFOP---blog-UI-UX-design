@@ -91,7 +91,6 @@ export async function getStaticProps({ params }){
   try {
     fs.writeFile("localDB.json", JSON.stringify({posts}), (err, res) => {
       if(err) throw err
-        console.log(res)
     })
   }catch(err){
     console.log(err)
