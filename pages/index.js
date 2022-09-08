@@ -28,7 +28,7 @@ export default function Home({ sorted }) {
       <Nav />
       <header>
         <Slider className={s.index_carousel} {...settings}>
-          {sorted&&sorted.map((post, index) =>
+          {sorted&&sorted.slice(0,4).map((post, index) =>
             <div key={index} className={s.header_child}>
               <img src={`/images/static/${post.filename}`} alt="" />
               <div className={s.content}>
@@ -156,23 +156,27 @@ export default function Home({ sorted }) {
 
       <div className={s.body}>
         <main className={s.bodyMain}>
-          <Link href="/7">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
+        {
+          sorted&&sorted.map((post, index) =>
+            <Link href={`/${post.id}`}>
+              <a className={s.card}>
+                <div className={s.img_container}>
+                  <img src={`/images/static/${post.filename}`} alt="" />
+                </div>
+                <div className={s.bosyMain_card_content}>
+                  <p className={s.tag}>{post.tag}</p>
+                  <b>{post.title.length > 30 ? post.title.substring(0,30) + "..." : post.title}</b>
+                  <footer>
+                    <span>{new Date(post.date).toDateString()}</span>
+                  </footer>
+                  <p className={s.desc}>
+                    {post.content.substring(0, 60) + "..."}
+                  </p>
+                </div>
+              </a>
+            </Link>
+        )}
+
 
           <Link href="/8">
           <a className={s.card}>
@@ -286,7 +290,7 @@ export async function getStaticProps(){
         return 0
       }
     }
-  ).slice(0,4)
+  )
   return {
     props: {
       sorted
