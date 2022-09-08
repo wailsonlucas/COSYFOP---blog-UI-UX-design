@@ -19,6 +19,7 @@
 .ad_zone i {
   font-size: 50px;
   margin-bottom:10px;
+  color:var(--prime)
 }
 .ad_zone p {
   font-size:30px;
@@ -126,13 +127,20 @@
   font-size:22px;
 }
 .aside_slideShow .card footer {
-  color:var(--g);
+  color:grey;
+  font-size: 12px;
   padding-top:6px;
 }
+.aside_slideShow .card footer span {
+  margin-right: 10px;
+}
 /* -------------- aside trending */
-.aside_trending {
-  padding:20px 0;
-  padding:40px 0;
+.aside_trending > div {
+  background: var(--d);
+  color:#fff;
+  padding:10px 0;
+  text-align: center;
+  margin:20px 0;
 }
 .aside_trending .card {
   display: flex;

@@ -95,8 +95,11 @@
   width:80px;
   margin-right:10px
 }
+.footer i {
+  color:#fff  
+}
 .footer .card i {
-  margin-right: 5px
+  margin-right: 5px;
 }
 .featurde_posts .card .img_container img {
   height:100%;

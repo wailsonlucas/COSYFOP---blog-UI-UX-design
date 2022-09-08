@@ -1,8 +1,19 @@
 import s from "./css/aside.module.css"
 import Link from "next/link"
+//React-Slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick"
 
-
-export default function Aside({ randomPosts }) {
+export default function Aside({ sorted, randomPosts }) {
+  console.log(sorted)
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
   return (
     <aside className={s.bodyAside}>
 
@@ -30,18 +41,28 @@ export default function Aside({ randomPosts }) {
       </div>
 
       <div className={s.aside_slideShow}>
-        <div className={s.card}>
-          <div className={s.img_container}>
-            <img src={"/images/static/j1.jpg"} alt="" />
-          </div>
-          <p>Titre de l&#39;article</p>
-          <footer>
-            <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
-          </footer>
-        </div>
+        <Slider {...settings}>
+        {
+          sorted&&sorted.slice(0,4).map((sort, index) =>
+          <Link href={`/${sort.id}`}>
+            <a key={index} className={s.card}>
+              <div className={s.img_container}>
+                <img src={`/images/static/${sort.filename}`} alt="" />
+              </div>
+              <p>{sort.title.length > 30 ? sort.title.substring(0, 30) + "..." : sort.title}</p>
+              <footer>
+                <span><i className="fa-solid fa-calendar-days"></i>{new Date(sort.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{sort.views}</span>
+              </footer>
+            </a>
+          </Link>
+        )}
+        </Slider>
       </div>
 
       <div className={s.aside_trending}>
+        <div>
+          CHOISU POUR VOUS
+        </div>
         {
           randomPosts&&randomPosts.map((rand, index) =>
           <Link href={`/${rand.id}`}>
@@ -61,14 +82,4 @@ export default function Aside({ randomPosts }) {
         </div>
     </aside>
   )
-}
-
-export async function getStaticProps(){
-  let { posts } = require("../localDB.json")
-  // let rendomPosts posts.fin
-  return {
-    props: {
-      rendomPosts: null
-    }
-  }
 }

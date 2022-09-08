@@ -6,7 +6,7 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Aside from "../components/Aside"
 
-export default function PostView({ renderedPost, simPosts }) {
+export default function PostView({ renderedPost, simPosts, randomPosts, sorted }) {
   return (
     <div>
     <Head>
@@ -46,9 +46,9 @@ export default function PostView({ renderedPost, simPosts }) {
 
           </div>
         </main>
-        <Aside />
+        <Aside randomPosts={randomPosts} sorted={sorted} />
       </div>
-      <Footer />
+      <Footer randomPosts={randomPosts}/>
     </div>
   )
 }
@@ -69,17 +69,30 @@ export async function getStaticProps({ params }){
   let {posts} = require("../localDB.json")
   //Passed to page props
   let renderedPost = posts.find(post => post.id === Number(params.pid))
-
+  //Increase post views
   posts.map(post => post.id === Number(params.pid) && post.views++)
-
+  //Get simular posts by tag name
   let simPosts = posts.filter(post => post.tag === renderedPost.tag)
+  //Sorting posts - for Asside
+  let sorted = posts.sort(
+    function(a,b) {
+      if(a.date > b.date) {
+        return 1
+      } else if (a.date < b.date) {
+        return -1
+      } else {
+        return 0
+      }
+    }
+  )
+  //Random posts - for Aside
+  let randomPosts = posts.sort(() => .5 - Math.random()).slice(0,4)
 
   try {
     fs.writeFile("localDB.json", JSON.stringify({posts}), (err, res) => {
       if(err) throw err
         console.log(res)
     })
-    // console.log(updatingLocalDB)
   }catch(err){
     console.log(err)
   }
@@ -87,7 +100,9 @@ export async function getStaticProps({ params }){
   return {
     props: {
       renderedPost,
-      simPosts
+      simPosts,
+      sorted,
+      randomPosts
     }
   }
 }

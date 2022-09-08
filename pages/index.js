@@ -116,7 +116,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
             </Link>
         )}
         </main>
-        <Aside randomPosts={randomPosts} />
+        <Aside randomPosts={randomPosts} sorted={sorted} />
       </div>
 
     <Footer randomPosts={randomPosts}/>
@@ -127,7 +127,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
 export async function getStaticProps(){
   let {posts} = require("../localDB.json")
 
-  let sorted = [...posts].sort(
+  let sorted = posts.sort(
     function(a,b) {
       if(a.date > b.date) {
         return 1
@@ -139,13 +139,13 @@ export async function getStaticProps(){
     }
   )
 
-  let trendingByViews = [...posts].sort((a, b) => {
+  let trendingByViews = posts.sort((a, b) => {
     if(a.views > b.views) return -1
     if(a.views < b.views) return 1
     return 0
   }).slice(0, 4)
 
-  let randomPosts = [...posts].sort(() => .5 - Math.random()).slice(0,4)
+  let randomPosts = posts.sort(() => .5 - Math.random()).slice(0,4)
 
   return {
     props: {
