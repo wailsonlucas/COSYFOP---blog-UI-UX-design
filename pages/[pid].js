@@ -6,7 +6,7 @@ import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Aside from "../components/Aside"
 
-export default function PostView({ post }) {
+export default function PostView({ renderedPost, simPosts }) {
   return (
     <div>
     <Head>
@@ -17,26 +17,30 @@ export default function PostView({ post }) {
       <div className={s.postView_body}>
         <main>
           <div className={s.img_cont}>
-            <img src={`/images/static/${post.filename}`} alt="" />
+            <img src={`/images/static/${renderedPost.filename}`} alt="" />
           </div>
-          <b className={s.post_title}>{post.title}</b>
+          <b className={s.post_title}>{renderedPost.title}</b>
           <div className={s.post_content}>
-            {post.content}
+            {renderedPost.content}
           </div>
 
           <div className={s.simular_posts}>
-            <section><p>SIMULAR POSTS</p></section>
-            <div>
-              <div className={s.simular_post}>
-                <div className={s.img_cont}>
-                  <img src={"/images/static/a.jpg"} alt="" />
+
+            <section><p>ARTICLES SIMILAIRES</p></section>
+            {simPosts&&simPosts.map((simpost,index) =>
+              <div  key={index}>
+                <div className={s.simular_post}>
+                  <div className={s.img_cont}>
+                    <img src={`/images/static/${simpost.filename}`} alt="" />
+                  </div>
+                  <b>{simpost.title}</b>
+                  <footer>
+                    <span>{new Date(simpost.date).toDateString()}</span>
+                  </footer>
                 </div>
-                <b>Simular Post Title</b>
-                <footer>
-                  <span>Aug 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-                </footer>
               </div>
-            </div>
+            )}
+
           </div>
         </main>
         <Aside />
@@ -47,8 +51,8 @@ export default function PostView({ post }) {
 }
 
 export async function getStaticPaths(){
-    let db = await require("../localDB.json")
-    let paths = db.posts.map(post => ({ params: {pid: post.id.toString() } }) )
+    let {posts} = await require("../localDB.json")
+    let paths = posts.map(post => ({ params: {pid: post.id.toString() } }) )
     return {
       paths,
       fallback: false
@@ -57,11 +61,15 @@ export async function getStaticPaths(){
 
 
 export async function getStaticProps({ params }){
-  let db = require("../localDB.json")
-  let post = db.posts.find(post => post.id === Number(params.pid))
+  let {posts} = require("../localDB.json")
+  let renderedPost = posts.find(post => post.id === Number(params.pid))
+
+  let simPosts = posts.filter(post => post.tag === renderedPost.tag)
+
   return {
     props: {
-      post
+      renderedPost,
+      simPosts
     }
   }
 }

@@ -1,14 +1,14 @@
 .home > header {
-  display: flex;
-  height:400px;
+  height:420px;
+  /* overflow-x: hidden; */
 }
-.home header > a {
+.home header .header_child {
   position: relative;
-  width:50%;
+  height: 400px;
 }
 .header_child img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .header_child::before {
@@ -42,6 +42,7 @@
 .header_child .content footer span:last-child {
   margin-left:10px
 }
+
 /* ________________________ trending_posts _________________________ */
 .trending_posts header {
   margin:0 var(--sideMargin);
@@ -69,7 +70,7 @@
   width: 220px;
 }
 .trending_post .img_container {
-  height:60%
+  height:60%;
 }
 .trending_post .img_container img {
   height: 100%;
@@ -140,7 +141,7 @@
 }
 .bodyMain .card .img_container {
   height:100%;
-  width:360px;
+  width:300px !important;
   margin-right: 20px;
 }
 .bodyMain .card .img_container img {
@@ -151,15 +152,14 @@
 .bosyMain_card_content {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: right;
   flex-grow:1;
 }
 .bosyMain_card_content .tag {
-  display: inline-block;
-  width:60px;
-  background:var(--prime);
-  color:#fff;
-  padding:5px 10px;
+  border-left:4px solid var(--prime);
+  color:var(--prime);
+  font-size: 16px;
+  padding:4px;
 }
 .bosyMain_card_content b {
   font-size: 24px;

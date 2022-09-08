@@ -5,9 +5,19 @@ import Head from "next/head"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Aside from "../components/Aside"
+//React-Slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick"
 
-
-export default function Home() {
+export default function Home({ sorted }) {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1
+  };
 
   return (
     <div className={s.home}>
@@ -17,34 +27,22 @@ export default function Home() {
     </Head>
       <Nav />
       <header>
-        <Link href="/1">
-        <a className={s.header_child}>
-          <img src={"/images/static/a.jpg"} alt="" />
-          <div className={s.content}>
-            <div className={s.header}>
-              News
+        <Slider className={s.index_carousel} {...settings}>
+          {sorted&&sorted.slice(0,4).map((post, index) =>
+            <div key={index} className={s.header_child}>
+              <img src={`/images/static/${post.filename}`} alt="" />
+              <div className={s.content}>
+                <div className={s.header}>
+                  {post.tag}
+                </div>
+                <p>{post.title}</p>
+                <footer>
+                  <span>{new Date(post.date).toDateString()}</span>
+                </footer>
+              </div>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris</p>
-            <footer>
-              <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-            </footer>
-          </div>
-        </a>
-        </Link>
-        <Link href="/2">
-        <a className={s.header_child}>
-          <img src={"/images/static/b.jpg"} alt="" />
-          <div className={s.content}>
-            <div className={s.header}>
-              News
-            </div>
-            <p>Sed efficitur est. Proin egestas mi nec ex consequat, vel viverra lorem </p>
-            <footer>
-              <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-            </footer>
-          </div>
-        </a>
-        </Link>
+          )}
+        </Slider>
       </header>
 
       <div className={s.trending_posts}>
@@ -158,113 +156,26 @@ export default function Home() {
 
       <div className={s.body}>
         <main className={s.bodyMain}>
-          <Link href="/7">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/8">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/8">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/9">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/10">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/11">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
+        {
+          sorted&&sorted.map((post, index) =>
+            <Link key={index} href={`/${post.id}`}>
+              <a className={s.card}>
+                <div className={s.img_container}>
+                  <img src={`/images/static/${post.filename}`} alt="" />
+                </div>
+                <div className={s.bosyMain_card_content}>
+                  <p className={s.tag}>{post.tag}</p>
+                  <b>{post.title.length > 30 ? post.title.substring(0,30) + "..." : post.title}</b>
+                  <footer>
+                    <span>{new Date(post.date).toDateString()}</span>
+                  </footer>
+                  <p className={s.desc}>
+                    {post.content.substring(0, 60) + "..."}
+                  </p>
+                </div>
+              </a>
+            </Link>
+        )}
         </main>
         <Aside />
       </div>
@@ -272,4 +183,26 @@ export default function Home() {
     <Footer />
     </div>
   )
+}
+
+export async function getStaticProps(){
+  let {posts} = require("../localDB.json")
+  // let datesArr = posts.map(post => post.date)
+  // let sorted = datesArr.sort().slice(0,4)
+  let sorted = posts.sort(
+    function(a,b) {
+      if(a.date > b.date) {
+        return 1
+      } else if (a.date < b.date) {
+        return -1
+      } else {
+        return 0
+      }
+    }
+  )
+  return {
+    props: {
+      sorted
+    }
+  }
 }
