@@ -158,7 +158,7 @@ export default function Home({ sorted }) {
         <main className={s.bodyMain}>
         {
           sorted&&sorted.map((post, index) =>
-            <Link href={`/${post.id}`}>
+            <Link key={index} href={`/${post.id}`}>
               <a className={s.card}>
                 <div className={s.img_container}>
                   <img src={`/images/static/${post.filename}`} alt="" />
@@ -176,97 +176,6 @@ export default function Home({ sorted }) {
               </a>
             </Link>
         )}
-
-
-          <Link href="/8">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/8">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/9">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/10">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
-
-          <Link href="/11">
-          <a className={s.card}>
-            <div className={s.img_container}>
-              <img src={"/images/static/b.jpg"} alt="" />
-            </div>
-            <div className={s.bosyMain_card_content}>
-              <p className={s.tag}>News</p>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>
-              <footer>
-                <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
-              </footer>
-              <p className={s.desc}>
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              </p>
-            </div>
-          </a>
-          </Link>
         </main>
         <Aside />
       </div>

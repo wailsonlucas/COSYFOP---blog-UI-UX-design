@@ -34,7 +34,7 @@ export default function Aside() {
           <div className={s.img_container}>
             <img src={"/images/static/j1.jpg"} alt="" />
           </div>
-          <p>Titre de l'article</p>
+          <p>Titre de l&#39;article</p>
           <footer>
             <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
           </footer>
@@ -47,7 +47,7 @@ export default function Aside() {
             <img src={"/images/static/a.jpg"} alt="" />
           </div>
             <div>
-          <div className={s.title}>Titre de l'article</div>
+          <div className={s.title}>Titre de l&#39;article</div>
           <footer>
             <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
           </footer>
@@ -58,7 +58,7 @@ export default function Aside() {
             <img src={"/images/static/b.jpg"} alt="" />
           </div>
             <div>
-            <div className={s.title}>Titre de l'article</div>
+            <div className={s.title}>Titre de l&#39;article</div>
             <footer>
               <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
@@ -69,7 +69,7 @@ export default function Aside() {
             <img src={"/images/static/t1.jpg"} alt="" />
           </div>
             <div>
-            <div className={s.title}>Titre de l'article</div>
+            <div className={s.title}>Titre de l&#39;article</div>
             <footer>
               <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>
@@ -80,7 +80,7 @@ export default function Aside() {
             <img src={"/images/static/t2.jpeg"} alt="" />
           </div>
             <div>
-            <div className={s.title}>Titre de l'article</div>
+            <div className={s.title}>Titre de l&#39;article</div>
             <footer>
               <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
             </footer>

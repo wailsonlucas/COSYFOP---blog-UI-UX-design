@@ -28,8 +28,8 @@ export default function PostView({ renderedPost, simPosts }) {
 
             <section><p>ARTICLES SIMILAIRES</p></section>
             {simPosts&&simPosts.map((simpost,index) =>
-              <div>
-                <div key={index} className={s.simular_post}>
+              <div  key={index}>
+                <div className={s.simular_post}>
                   <div className={s.img_cont}>
                     <img src={`/images/static/${simpost.filename}`} alt="" />
                   </div>
