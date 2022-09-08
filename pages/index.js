@@ -10,14 +10,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
-export default function Home() {
+export default function Home({ sorted }) {
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
-    slidesToScroll: 1,
-    nextArrow: <div>XXX</div>
+    slidesToScroll: 1
   };
 
   return (
@@ -29,45 +28,20 @@ export default function Home() {
       <Nav />
       <header>
         <Slider className={s.index_carousel} {...settings}>
-          <div className={s.header_child}>
-            <img src={"/images/static/a.jpg"} alt="" />
-            <div className={s.content}>
-              <div className={s.header}>
-                News
+          {sorted&&sorted.map((post, index) =>
+            <div key={index} className={s.header_child}>
+              <img src={`/images/static/${post.filename}`} alt="" />
+              <div className={s.content}>
+                <div className={s.header}>
+                  {post.tag}
+                </div>
+                <p>{post.title}</p>
+                <footer>
+                  <span>{new Date(post.date).toDateString()}</span>
+                </footer>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris</p>
-              <footer>
-                <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-              </footer>
             </div>
-          </div>
-
-          <div className={s.header_child}>
-            <img src={"/images/static/b.jpg"} alt="" />
-            <div className={s.content}>
-              <div className={s.header}>
-                News
-              </div>
-              <p>Sed efficitur est. Proin egestas mi nec ex consequat, vel viverra lorem </p>
-              <footer>
-                <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-              </footer>
-            </div>
-          </div>
-
-          <div className={s.header_child}>
-            <img src={"/images/static/j1.jpg"} alt="" />
-            <div className={s.content}>
-              <div className={s.header}>
-                News
-              </div>
-              <p>Sed efficitur est. Proin egestas mi nec ex consequat, vel viverra lorem </p>
-              <footer>
-                <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-              </footer>
-            </div>
-          </div>
-
+          )}
         </Slider>
       </header>
 
@@ -296,4 +270,26 @@ export default function Home() {
     <Footer />
     </div>
   )
+}
+
+export async function getStaticProps(){
+  let {posts} = require("../localDB.json")
+  // let datesArr = posts.map(post => post.date)
+  // let sorted = datesArr.sort().slice(0,4)
+  let sorted = posts.sort(
+    function(a,b) {
+      if(a.date > b.date) {
+        return 1
+      } else if (a.date < b.date) {
+        return -1
+      } else {
+        return 0
+      }
+    }
+  ).slice(0,4)
+  return {
+    props: {
+      sorted
+    }
+  }
 }
