@@ -5,9 +5,20 @@ import Head from "next/head"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import Aside from "../components/Aside"
-
+//React-Slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick"
 
 export default function Home() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    nextArrow: <div>XXX</div>
+  };
 
   return (
     <div className={s.home}>
@@ -17,34 +28,47 @@ export default function Home() {
     </Head>
       <Nav />
       <header>
-        <Link href="/1">
-        <a className={s.header_child}>
-          <img src={"/images/static/a.jpg"} alt="" />
-          <div className={s.content}>
-            <div className={s.header}>
-              News
+        <Slider className={s.index_carousel} {...settings}>
+          <div className={s.header_child}>
+            <img src={"/images/static/a.jpg"} alt="" />
+            <div className={s.content}>
+              <div className={s.header}>
+                News
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris</p>
+              <footer>
+                <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
+              </footer>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris</p>
-            <footer>
-              <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-            </footer>
           </div>
-        </a>
-        </Link>
-        <Link href="/2">
-        <a className={s.header_child}>
-          <img src={"/images/static/b.jpg"} alt="" />
-          <div className={s.content}>
-            <div className={s.header}>
-              News
+
+          <div className={s.header_child}>
+            <img src={"/images/static/b.jpg"} alt="" />
+            <div className={s.content}>
+              <div className={s.header}>
+                News
+              </div>
+              <p>Sed efficitur est. Proin egestas mi nec ex consequat, vel viverra lorem </p>
+              <footer>
+                <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
+              </footer>
             </div>
-            <p>Sed efficitur est. Proin egestas mi nec ex consequat, vel viverra lorem </p>
-            <footer>
-              <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
-            </footer>
           </div>
-        </a>
-        </Link>
+
+          <div className={s.header_child}>
+            <img src={"/images/static/j1.jpg"} alt="" />
+            <div className={s.content}>
+              <div className={s.header}>
+                News
+              </div>
+              <p>Sed efficitur est. Proin egestas mi nec ex consequat, vel viverra lorem </p>
+              <footer>
+                <span>Jan 19, 2022 </span><span>33 <i className="fa-solid fa-comment"></i> </span>
+              </footer>
+            </div>
+          </div>
+
+        </Slider>
       </header>
 
       <div className={s.trending_posts}>

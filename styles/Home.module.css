@@ -1,14 +1,14 @@
 .home > header {
-  display: flex;
-  height:400px;
+  height:420px;
+  /* overflow-x: hidden; */
 }
-.home header > a {
+.home header .header_child {
   position: relative;
-  width:50%;
+  height: 400px;
 }
 .header_child img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .header_child::before {
@@ -42,6 +42,7 @@
 .header_child .content footer span:last-child {
   margin-left:10px
 }
+
 /* ________________________ trending_posts _________________________ */
 .trending_posts header {
   margin:0 var(--sideMargin);
