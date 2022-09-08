@@ -167,7 +167,7 @@ export default function Home({ sorted }) {
                   <p className={s.tag}>{post.tag}</p>
                   <b>{post.title.length > 30 ? post.title.substring(0,30) + "..." : post.title}</b>
                   <footer>
-                    <span>{new Date(post.date).toDateString()}</span>
+                    <span><i className="fa-solid fa-calendar-days"></i>{new Date(post.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{post.views}</span>
                   </footer>
                   <p className={s.desc}>
                     {post.content.substring(0, 60) + "..."}

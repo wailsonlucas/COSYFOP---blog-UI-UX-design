@@ -69,9 +69,6 @@ export async function getStaticProps({ params }){
 
   posts.map(post => post.id === Number(params.pid) && post.views++)
 
-  // renderedPost.views ++;
-  // let posts.find(post => post.id === Number(params.id))
-
   let simPosts = posts.filter(post => post.tag === renderedPost.tag)
 
   try {

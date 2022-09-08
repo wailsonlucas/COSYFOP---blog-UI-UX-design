@@ -36,7 +36,7 @@ export default function Aside() {
           </div>
           <p>Titre de l&#39;article</p>
           <footer>
-            <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+            <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
           </footer>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function Aside() {
             <div>
           <div className={s.title}>Titre de l&#39;article</div>
           <footer>
-            <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+            <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
           </footer>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function Aside() {
             <div>
             <div className={s.title}>Titre de l&#39;article</div>
             <footer>
-              <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+              <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
             </footer>
             </div>
         </div>
@@ -71,7 +71,7 @@ export default function Aside() {
             <div>
             <div className={s.title}>Titre de l&#39;article</div>
             <footer>
-              <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+              <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
             </footer>
             </div>
         </div>
@@ -82,7 +82,7 @@ export default function Aside() {
             <div>
             <div className={s.title}>Titre de l&#39;article</div>
             <footer>
-              <span>Jan 19, 2022 </span><span> <i className="fa-solid fa-comment"></i> 33</span>
+              <span><i className="fa-solid fa-calendar-days"></i>Jan 19, 2022 </span><span> <i className="fa-solid fa-eye"></i>33</span>
             </footer>
             </div>
         </div>
@@ -90,4 +90,14 @@ export default function Aside() {
 
     </aside>
   )
+}
+
+export async function getStaticProps(){
+  let { posts } = require("../localDB.json")
+  // let rendomPosts posts.fin
+  return {
+    props: {
+      rendomPosts: null
+    }
+  }
 }
