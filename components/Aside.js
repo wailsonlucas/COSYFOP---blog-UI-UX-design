@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
 export default function Aside({ sorted, randomPosts }) {
-  console.log(sorted)
+
   var settings = {
     dots: true,
     infinite: true,
@@ -44,8 +44,8 @@ export default function Aside({ sorted, randomPosts }) {
         <Slider {...settings}>
         {
           sorted&&sorted.slice(0,4).map((sort, index) =>
-          <Link href={`/${sort.id}`}>
-            <a key={index} className={s.card}>
+          <Link key={index} href={`/${sort.id}`}>
+            <a className={s.card}>
               <div className={s.img_container}>
                 <img src={`/images/static/${sort.filename}`} alt="" />
               </div>
@@ -65,7 +65,7 @@ export default function Aside({ sorted, randomPosts }) {
         </div>
         {
           randomPosts&&randomPosts.map((rand, index) =>
-          <Link href={`/${rand.id}`}>
+          <Link key={index} href={`/${rand.id}`}>
             <a className={s.card}>
               <div className={s.img_container}>
                 <img src={`/images/static/${rand.filename}`} alt="" />

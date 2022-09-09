@@ -30,8 +30,8 @@ export default function Footer({ randomPosts }) {
           <b>Articles Tendence</b>
           {
             randomPosts&&randomPosts.map((rand, index) =>
-              <Link href={`/${rand.id}`}>
-              <a key={index} className={s.card}>
+              <Link key={index} href={`/${rand.id}`}>
+              <a className={s.card}>
                 <div className={s.img_container}>
                   <img src={`/images/static/${rand.filename}`} alt="" />
                 </div>

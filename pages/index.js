@@ -22,7 +22,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
   return (
     <div className={s.home}>
     <Head>
-      <title>COSYFOP | Home page</title>
+      <title>COSYFOP | SITE OFFICIEL</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
       <Nav />
