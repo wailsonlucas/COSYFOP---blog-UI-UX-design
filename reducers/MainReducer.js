@@ -1,5 +1,5 @@
 const initialState = {
-	sideMenu: true
+	sideMenu: false
 }
 
 

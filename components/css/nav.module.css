@@ -97,7 +97,7 @@
 }
 /* ___________________ sideNav __________________ */
 .sideNav {
-  display: none;
+  display: flex;
   position: fixed;flex-direction: column;
   background:var(--d);
   height: 100% !important;
@@ -186,8 +186,4 @@
   .bottom_nav {
     display: none;
   }
-  .sideNav {
-    display: flex;
-  }
-
 }
