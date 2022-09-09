@@ -106,6 +106,7 @@
   left:0;
   color:#fff;
   padding:0 14px;
+  z-index: 5;
 }
 .sideNav a {
   color:#fff;
