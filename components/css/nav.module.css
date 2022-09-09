@@ -161,8 +161,6 @@
 /* __________________ Media Qeuries __________________ */
 @media (max-width: 600px) {
   .top_nav {
-    position: fixed;
-    width: 100%;
     background: #fff;
     justify-content: space-around;
     height: 50px;
