@@ -14,7 +14,7 @@ export default function Nav() {
     if(typeof window !== "undefined") {
       console.log(window.innerWidth)
     }
-  },[])
+  })
 
   return (
     <nav className={s.nav}>

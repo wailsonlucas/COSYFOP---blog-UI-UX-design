@@ -29,23 +29,22 @@ export default function Footer({ randomPosts }) {
         <div className={s.featurde_posts}>
           <b>Articles Tendence</b>
           {
-            randomPosts&&randomPosts.map((rand, index) =>
-              <Link key={index} href={`/${rand.id}`}>
-              <a className={s.card}>
-                <div className={s.img_container}>
-                  <img src={`/images/static/${rand.filename}`} alt="" />
-                </div>
-                <div>
-                  <p>{rand.title.length > 30 ? rand.title.substring(0, 30) + "..." : rand.title}</p>
-                  <footer>
-                    <p><i className="fa-solid fa-calendar-days"></i>{new Date(rand.date).toDateString()}</p>
-                    <p><i className="fa-solid fa-eye"></i>{rand.views}</p>
-                  </footer>
-                </div>
-              </a>
-              </Link>
-          )}
-
+           randomPosts&&randomPosts.map((rand, index) =>
+             <Link key={index} href={`/${rand.id}`}>
+             <a className={s.card}>
+               <div className={s.img_container}>
+                 <img src={`/images/static/${rand.filename}`} alt="" />
+               </div>
+               <div>
+                 <p>{rand.title.length > 30 ? rand.title.substring(0, 30) + "..." : rand.title}</p>
+                 <footer>
+                   <p><i className="fa-solid fa-calendar-days"></i>{new Date(rand.date).toDateString()}</p>
+                   <p><i className="fa-solid fa-eye"></i>{rand.views}</p>
+                 </footer>
+               </div>
+             </a>
+             </Link>
+         )}
         </div>
         <div>
           <div className={s.insta_pictures}>

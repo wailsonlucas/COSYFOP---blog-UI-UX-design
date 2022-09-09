@@ -68,13 +68,13 @@ export async function getStaticProps({ params }){
 
   let {posts} = require("../localDB.json")
   //Passed to page props
-  let renderedPost = posts.find(post => post.id === Number(params.pid))
+  let renderedPost = [...posts].find(post => post.id === Number(params.pid))
   //Increase post views
   posts.map(post => post.id === Number(params.pid) && post.views++)
   //Get simular posts by tag name
-  let simPosts = posts.filter(post => post.tag === renderedPost.tag)
+  let simPosts =  [...posts].filter(post => post.tag === renderedPost.tag)
   //Sorting posts - for Asside
-  let sorted = posts.sort(
+  let sorted =  [...posts].sort(
     function(a,b) {
       if(a.date > b.date) {
         return 1
@@ -86,15 +86,15 @@ export async function getStaticProps({ params }){
     }
   )
   //Random posts - for Aside
-  let randomPosts = posts.sort(() => .5 - Math.random()).slice(0,4)
-
-  try {
-    fs.writeFile("localDB.json", JSON.stringify({posts}), (err, res) => {
-      if(err) throw err
-    })
-  }catch(err){
-    console.log(err)
-  }
+  let randomPosts = [...posts].sort(() => .5 - Math.random()).slice(0,4)
+  
+  // try {
+  //   fs.writeFile("localDB.json", JSON.stringify({posts}), (err, res) => {
+  //     if(err) throw err
+  //   })
+  // }catch(err){
+  //   console.log(err)
+  // }
 
   return {
     props: {
