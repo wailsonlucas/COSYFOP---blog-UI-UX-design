@@ -17,14 +17,15 @@
 }
 .darkModeButtons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width:100%;
+  width:100px;
 }
 .darkModeButtons i {
   font-size:22px;
   cursor: pointer;
-  color:var(--prime)
+  color:var(--prime);
+  margin:0 20px;
 }
 .lang_icon {
   color:var(--prime);
@@ -230,5 +231,8 @@
   }
   .sideNav a {
     border:none !important
+  }
+  .darkModeButtons {
+    width:100%
   }
 }

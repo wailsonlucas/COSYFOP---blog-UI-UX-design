@@ -122,6 +122,8 @@ export default function Nav() {
                 :
                 <i className={s.lang_icon} onClick={() => handelLanguageToggle("ar")}>FR</i>
               }
+            </div>
+            <div>
               <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-xmark"></i>
             </div>
           </footer>
