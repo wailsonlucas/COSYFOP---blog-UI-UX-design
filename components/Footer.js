@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux"
 import s from "./css/footer.module.css"
 import Link from "next/link"
 
 export default function Footer({ randomPosts }) {
+  let { lang } = useSelector(state => state.MainReducer)
   return (
     <div className={s.footer}>
       <div>
@@ -36,7 +38,11 @@ export default function Footer({ randomPosts }) {
                  <img src={`/images/static/${rand.filename}`} alt="" />
                </div>
                <div>
-                 <p>{rand.title.length > 30 ? rand.title.substring(0, 30) + "..." : rand.title}</p>
+               <p>{
+                   lang==="fr" ? rand.languages.fr.title.length > 30 ? rand.languages.fr.title.substring(0, 30) + "..." : rand.languages.fr.title
+                   :
+                   rand.languages.ar.length > 30 ? rand.languages.ar.substring(0, 30) + "..." : rand.languages.ar.title
+                 }</p>
                  <footer>
                    <p><i className="fa-solid fa-calendar-days"></i>{new Date(rand.date).toDateString()}</p>
                    <p><i className="fa-solid fa-eye"></i>{rand.views}</p>

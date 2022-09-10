@@ -12,13 +12,20 @@
 }
 .darkModeButtons {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width:100px
 }
 .darkModeButtons i {
   font-size:22px;
   cursor: pointer;
   color:var(--prime)
+}
+.lang_icon {
+  color:var(--prime);
+  user-select: none;
+  font-size:20px;
+  cursor: pointer;
 }
 .darkNav .top_nav  {
   border-bottom:1px solid #222831 !important;

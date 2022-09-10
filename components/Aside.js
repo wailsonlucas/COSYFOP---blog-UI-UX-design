@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
 export default function Aside({ sorted, randomPosts }) {
-  const { darkMode } = useSelector(state => state.MainReducer)
+  const { darkMode, lang } = useSelector(state => state.MainReducer)
   var settings = {
     dots: true,
     infinite: true,
@@ -50,7 +50,11 @@ export default function Aside({ sorted, randomPosts }) {
               <div className={s.img_container}>
                 <img src={`/images/static/${sort.filename}`} alt="" />
               </div>
-              <p>{sort.title.length > 30 ? sort.title.substring(0, 30) + "..." : sort.title}</p>
+              <p>{
+                  lang==="fr" ? sort.languages.fr.title.length > 30 ? sort.languages.fr.title.substring(0, 30) + "..." : sort.languages.fr.title
+                  :
+                  sort.languages.ar.length > 30 ? sort.languages.ar.substring(0, 30) + "..." : sort.languages.ar.title
+                }</p>
               <footer>
                 <span><i className="fa-solid fa-calendar-days"></i>{new Date(sort.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{sort.views}</span>
               </footer>
@@ -72,7 +76,11 @@ export default function Aside({ sorted, randomPosts }) {
                 <img src={`/images/static/${rand.filename}`} alt="" />
               </div>
                 <div>
-              <div className={s.title}>{rand.title.length > 30 ? rand.title.substring(0, 30) + "..." : rand.title}</div>
+                <div className={s.title}>{
+                    lang==="fr" ? rand.languages.fr.title.length > 30 ? rand.languages.fr.title.substring(0, 30) + "..." : rand.languages.fr.title
+                    :
+                    rand.languages.ar.length > 30 ? rand.languages.ar.substring(0, 30) + "..." : rand.languages.ar.title
+                  }</div>
               <footer>
                 <p><i className="fa-solid fa-calendar-days"></i>{new Date(rand.date).toDateString()}</p><p> <i className="fa-solid fa-eye"></i>{rand.views}</p>
               </footer>

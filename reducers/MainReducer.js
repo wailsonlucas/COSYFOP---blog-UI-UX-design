@@ -17,6 +17,11 @@ const MainReducer = (state=initialState, action) => {
 				...state,
 				darkMode: !state.darkMode
 			}
+		case "SET_LANGUAGE":
+			return {
+				...state,
+				lang: action.payload
+			}
 		default:
 			return state;
 	}

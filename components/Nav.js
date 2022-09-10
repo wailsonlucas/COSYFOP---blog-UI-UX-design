@@ -4,39 +4,76 @@ import { useDispatch, useSelector } from "react-redux"
 import s from "./css/nav.module.css"
 import Link from "next/link"
 //Actions
-import { triggerSideMenu, setDarkMode } from "../reducers/ActionsCreator"
+import { triggerSideMenu, setDarkMode, setLanguage } from "../reducers/ActionsCreator"
 
 export default function Nav() {
   const dispatch = useDispatch()
-  let { sideMenu, darkMode } = useSelector(state => state.MainReducer)
+  let { sideMenu, darkMode, lang } = useSelector(state => state.MainReducer)
   const [dark, setDark] = useState(false)
-
-  // if(typeof window !== "undefined") localStorage.setItem("darkModeState", false)
-
+  // const [langu, setLangu] = useState("")
 
   useEffect(() => {
     checkDark()
+    // checkLang()
   }, [dark])
 
   const checkDark = () => {
     if(typeof window !== "undefined") {
-      let darkState = Boolean(JSON.parse(localStorage.darkstorage))
+      let darkState = Boolean(localStorage.darkstorage)
       if(darkState) {
-        dispatch(setDarkMode())
+        dispatch(setDarkMode(dark))
       } else {
-        dispatch(setDarkMode())
+        dispatch(setDarkMode(dark))
       }
+    }
+  }
 
+  const checkLang = () => {
+    if(typeof window !== "undefined") {
+      let langState = localStorage.languagestorage
+
+      if(langState==="fr") {
+        dispatch(setLanguage("ar"))
+      } else if(langState==="ar") {
+        dispatch(setLanguage("fr"))
+      } else {
+        dispatch(setLanguage("fr"))
+      }
     }
   }
 
   const handelDarkModeToggle = () => {
     if(typeof window !== "undefined") {
       setDark(!dark)
+      console.log(dark)
       localStorage.setItem("darkstorage", dark)
     }
   }
 
+  const handelLanguageToggle = lan => {
+    if(typeof window !== "undefined") {
+      // setLangu(lan)
+      // localStorage.setItem("languagestorage", lan)
+
+
+      let langState = localStorage.languagestorage
+      console.log(langState)
+
+      if(langState==="fr") {
+        localStorage.setItem("languagestorage", "ar")
+        dispatch(setLanguage("ar"))
+      } else {
+        localStorage.setItem("languagestorage", "fr")
+        dispatch(setLanguage("fr"))
+      }
+
+      if(typeof langState === "undefined") {
+          dispatch(setLanguage("fr"))
+          localStorage.setItem("languagestorage", "fr")
+      }
+
+    }
+  }
 
   return (
     <nav className={`${s.nav} ${darkMode&&s.darkNav}`}>
@@ -68,6 +105,12 @@ export default function Nav() {
               <i onClick={handelDarkModeToggle} className="fa-solid fa-sun"></i>
               :
               <i onClick={handelDarkModeToggle} className="fa-solid fa-moon"></i>
+            }
+            {
+              lang==="fr"?
+              <button className={s.lang_icon} onClick={() => handelLanguageToggle("fr")}>AR</button>
+              :
+              <button className={s.lang_icon} onClick={() => handelLanguageToggle("ar")}>FR</button>
             }
           </li>
         </ul>

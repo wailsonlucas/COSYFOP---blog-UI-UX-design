@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
 export default function Home({ sorted, trendingByViews, randomPosts }) {
-  let { darkMode } = useSelector(state => state.MainReducer)
+  let { darkMode, lang } = useSelector(state => state.MainReducer)
   var settings = {
     dots: true,
     infinite: true,
@@ -37,7 +37,11 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
                 <div className={s.header}>
                   {post.tag}
                 </div>
-                <p>{post.title.length > 30 ? post.title.substring(0, 30) + "..." : post.title}</p>
+                <p>{
+                    lang === "fr"? post.languages.fr.title.length > 30 ? post.languages.fr.title.substring(0, 30) + "..." : post.languages.fr.title
+                    :
+                    post.languages.ar.title.length > 30 ? post.languages.ar.title.substring(0, 30) + "..." : post.languages.ar.title
+                  }</p>
                 <footer>
                   <span>{new Date(post.date).toDateString()}</span>
                 </footer>
@@ -60,7 +64,11 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
                   <img src={`/images/static/${trend.filename}`} alt="" />
                 </div>
                 <div className={s.content}>
-                  {trend.title.length > 30 ? trend.title.substring(0, 30) + "..." : trend.title}
+                <p>{
+                    lang==="fr" ? trend.languages.fr.title.length > 30 ? trend.languages.fr.substring(0, 30) + "..." : trend.languages.fr.title
+                    :
+                    trend.languages.ar.title.length > 30 ? trend.languages.ar.title.substring(0, 30) + "..." : trend.languages.ar.title
+                  }</p>
                 </div>
                 <footer>
                 <div>
@@ -106,14 +114,20 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
                 </div>
                 <div className={s.bosyMain_card_content}>
                   <p className={s.tag}>{post.tag}</p>
-                  <b>{post.title.length > 30 ? post.title.substring(0,30) + "..." : post.title}</b>
+                  <p>{
+                      lang==="fr" ? post.languages.fr.title.length > 30 ? post.languages.fr.title.substring(0, 30) + "..." : post.languages.fr.title
+                      :
+                      post.languages.ar.title.length > 30 ? post.languages.ar.title.substring(0, 30) + "..." : post.languages.ar.title
+                    }</p>
                   <footer>
                     <span><i className="fa-solid fa-calendar-days"></i>{new Date(post.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{post.views}</span>
                   </footer>
-                  <p className={s.desc}>
-                    {post.content.substring(0, 60) + "..."}
-                  </p>
-                </div>
+                  <p className={s.desc}>{
+                      lang==="fr" ? post.languages.fr.content.length > 30 ? post.languages.fr.content.substring(0, 30) + "..." : post.languages.fr.content
+                      :
+                      post.languages.ar.content.length > 30 ? post.languages.ar.content.substring(0, 30) + "..." : post.languages.ar.content
+                    }</p>
+                  </div>
               </a>
             </Link>
         )}
