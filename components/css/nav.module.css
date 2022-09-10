@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width:100px
+  width:100%;
 }
 .darkModeButtons i {
   font-size:22px;
@@ -227,5 +227,8 @@
   }
   .bottom_nav {
     display: none;
+  }
+  .sideNav a {
+    border:none !important
   }
 }

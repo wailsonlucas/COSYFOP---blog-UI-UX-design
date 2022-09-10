@@ -116,8 +116,14 @@ export default function Nav() {
                 :
                 <i onClick={handelDarkModeToggle} className="fa-solid fa-moon"></i>
               }
+              {
+                lang==="fr"?
+                <i className={s.lang_icon} onClick={() => handelLanguageToggle("fr")}>AR</i>
+                :
+                <i className={s.lang_icon} onClick={() => handelLanguageToggle("ar")}>FR</i>
+              }
+              <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-xmark"></i>
             </div>
-            <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-xmark"></i>
           </footer>
         </div>
       }
