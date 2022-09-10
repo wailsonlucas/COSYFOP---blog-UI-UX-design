@@ -194,15 +194,20 @@
 .bodyMain .card span {
   margin-right:5px
 }
+.bosyMain_card_content {
+  padding:0 20px;
+}
 .bodyMain .card {
   display: flex;
   height:220px;
   margin-bottom: 60px;
 }
+.bodyMain .card .title {
+  padding:8px 0
+}
 .bodyMain .card .img_container {
   height:100%;
   width:300px !important;
-  margin-right: 20px;
 }
 .bodyMain .card .img_container img {
   height:100%;
@@ -216,14 +221,11 @@
   flex-grow:1;
 }
 .bosyMain_card_content .tag {
-  border-left:4px solid var(--prime);
-  color:var(--prime);
+  background: var(--prime);
+  color:#fff;
   font-size: 16px;
   padding:4px;
-}
-.bosyMain_card_content b {
-  font-size: 24px;
-  margin:8px 0;
+  margin-bottom:8px
 }
 .bosyMain_card_content footer {
   font-size: 12px;

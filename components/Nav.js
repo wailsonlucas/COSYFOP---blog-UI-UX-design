@@ -76,7 +76,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className={`${s.nav} ${darkMode&&s.darkNav}`}>
+    <nav style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.nav} ${darkMode&&s.darkNav}`}>
       <div className={s.top_nav}>
         <div className={s.links_container}>
           <Link href="/about">A PROPOS DE NOUS</Link>

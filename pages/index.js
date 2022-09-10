@@ -22,7 +22,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
   };
 
   return (
-    <div className={`${s.home} ${darkMode&&s.darkIndex}`}>
+    <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.home} ${darkMode&&s.darkIndex}`}>
     <Head>
       <title>COSYFOP | SITE OFFICIEL</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -51,7 +51,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
         </Slider>
       </header>
 
-      <div className={s.trending_posts}>
+      <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={s.trending_posts}>
         <header>
           <p>Articles Tendance</p>
         </header>
@@ -85,7 +85,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
         </main>
       </div>
 
-      <div className={`${s.intro} ${darkMode&&s.darkIntro}`}>
+      <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.intro} ${darkMode&&s.darkIntro}`}>
           <div>
             <p className={s.shade}>Pourquoi nous sommes ici ?</p>
             <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
@@ -94,7 +94,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
           <img src={"/images/static/j1.jpg"} alt="" />
       </div>
 
-      <div className={`${s.intro} ${darkMode&&s.darkIntro}`}>
+      <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.intro} ${darkMode&&s.darkIntro}`}>
       <img src={"/images/static/j2.jpg"} alt="" />
           <div>
             <p className={s.shade}>C&#39;est notre vision !</p>
@@ -113,12 +113,14 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
                   <img src={`/images/static/${post.filename}`} alt="" />
                 </div>
                 <div className={s.bosyMain_card_content}>
-                  <p className={s.tag}>{post.tag}</p>
-                  <p>{
+                  <div>
+                    <span className={s.tag}>{post.tag}</span>
+                  </div>
+                  <h3 className={s.title}>{
                       lang==="fr" ? post.languages.fr.title.length > 30 ? post.languages.fr.title.substring(0, 30) + "..." : post.languages.fr.title
                       :
                       post.languages.ar.title.length > 30 ? post.languages.ar.title.substring(0, 30) + "..." : post.languages.ar.title
-                    }</p>
+                    }</h3>
                   <footer>
                     <span><i className="fa-solid fa-calendar-days"></i>{new Date(post.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{post.views}</span>
                   </footer>
