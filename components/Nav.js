@@ -9,67 +9,89 @@ import { triggerSideMenu, setDarkMode, setLanguage } from "../reducers/ActionsCr
 export default function Nav() {
   const dispatch = useDispatch()
   let { sideMenu, darkMode, lang } = useSelector(state => state.MainReducer)
-  const [dark, setDark] = useState(false)
+  // const [dark, setDark] = useState(false)
 
-  useEffect(() => {
-    checkDark()
-  }, [dark])
+  // useEffect(() => {
+  //   checkDark()
+  // }, [dark])
 
-  const checkDark = useCallback(() => {
-    if(typeof window !== "undefined") {
-      let darkState = Boolean(localStorage.darkstorage)
-      if(darkState) {
-        dispatch(setDarkMode(dark))
-      } else {
-        dispatch(setDarkMode(dark))
+  // const checkDark = useCallback(() => {
+  //   if(typeof window !== "undefined") {
+  //     let darkState = Boolean(localStorage.darkstorage)
+  //     if(darkState) {
+  //       dispatch(setDarkMode(dark))
+  //     } else {
+  //       dispatch(setDarkMode(dark))
+  //     }
+  //   }
+  // }, [dark, dispatch])
+
+
+  // const checkDark = () => {
+  //   if(typeof window !== "undefined") {
+  //     let darkState = Boolean(localStorage.darkstorage)
+  //
+  //     if(darkState) {
+  //       dispatch(setDarkMode(dark))
+  //     } else {
+  //       dispatch(setDarkMode(dark))
+  //     }
+  //
+  //   }
+  // }
+
+  // const checkLang = () => {
+  //   if(typeof window !== "undefined") {
+  //     let langState = localStorage.languagestorage
+  //
+  //     if(langState==="fr") {
+  //       dispatch(setLanguage("ar"))
+  //     } else if(langState==="ar") {
+  //       dispatch(setLanguage("fr"))
+  //     } else {
+  //       dispatch(setLanguage("fr"))
+  //     }
+  //   }
+  // }
+
+
+
+  const handelDarkModeToggle =   useCallback(() => {
+      if(typeof window !== "undefined") {
+        let darkState = Boolean(localStorage.darkstorage)
+
+        if(darkState) {
+          dispatch(setDarkMode(false))
+          localStorage.setItem("darkstorage", false)
+        } else {
+          dispatch(setDarkMode(true))
+          localStorage.setItem("darkstorage", true)
+        }
       }
-    }
-  }, [])
+    }, [dispatch])
 
 
-  const checkLang = () => {
-    if(typeof window !== "undefined") {
-      let langState = localStorage.languagestorage
 
-      if(langState==="fr") {
-        dispatch(setLanguage("ar"))
-      } else if(langState==="ar") {
-        dispatch(setLanguage("fr"))
-      } else {
-        dispatch(setLanguage("fr"))
-      }
-    }
-  }
+  const handelLanguageToggle = useCallback(() => {
+      if(typeof window !== "undefined") {
 
-  const handelDarkModeToggle = () => {
-    if(typeof window !== "undefined") {
-      setDark(!dark)
-      console.log(dark)
-      localStorage.setItem("darkstorage", dark)
-    }
-  }
+        let langState = localStorage.languagestorage
 
-  const handelLanguageToggle = lan => {
-    if(typeof window !== "undefined") {
-
-      let langState = localStorage.languagestorage
-      console.log(langState)
-
-      if(langState==="fr") {
-        localStorage.setItem("languagestorage", "ar")
-        dispatch(setLanguage("ar"))
-      } else {
-        localStorage.setItem("languagestorage", "fr")
-        dispatch(setLanguage("fr"))
-      }
-
-      if(typeof langState === "undefined") {
-          dispatch(setLanguage("fr"))
+        if(langState==="fr") {
+          localStorage.setItem("languagestorage", "ar")
+          dispatch(setLanguage("ar"))
+        } else {
           localStorage.setItem("languagestorage", "fr")
-      }
+          dispatch(setLanguage("fr"))
+        }
 
-    }
-  }
+        if(typeof langState === "undefined") {
+            dispatch(setLanguage("fr"))
+            localStorage.setItem("languagestorage", "fr")
+        }
+
+      }
+    }, [dispatch])
 
   return (
     <>
@@ -119,9 +141,9 @@ export default function Nav() {
               }
               {
                 lang==="fr"?
-                <i className={s.lang_icon} onClick={() => handelLanguageToggle("fr")}>AR</i>
+                <i className={s.lang_icon} onClick={handelLanguageToggle}>AR</i>
                 :
-                <i className={s.lang_icon} onClick={() => handelLanguageToggle("ar")}>FR</i>
+                <i className={s.lang_icon} onClick={handelLanguageToggle}>FR</i>
               }
             </div>
             <div>
