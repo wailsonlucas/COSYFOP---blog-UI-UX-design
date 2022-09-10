@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import s from "./css/nav.module.css"
@@ -13,9 +13,9 @@ export default function Nav() {
 
   useEffect(() => {
     checkDark()
-  }, [dark, checkDark])
+  }, [dark])
 
-  const checkDark = () => {
+  const checkDark = useCallback(() => {
     if(typeof window !== "undefined") {
       let darkState = Boolean(localStorage.darkstorage)
       if(darkState) {
@@ -24,7 +24,8 @@ export default function Nav() {
         dispatch(setDarkMode(dark))
       }
     }
-  }
+  }, [])
+
 
   const checkLang = () => {
     if(typeof window !== "undefined") {
