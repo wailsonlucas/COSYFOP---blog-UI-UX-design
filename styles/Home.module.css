@@ -177,12 +177,11 @@
 .darkBodyMain .card i {
   color:#fff
 }
-.darkBodyMain .bosyMain_card_content .tag {
-  border-left:4px solid grey;
-  color:grey
-}
 .darkBodyMain .bosyMain_card_content b {
   color:#fff;
+}
+.darkBodyMain .card .title {
+  color:#fff
 }
 .darkBodyMain .bosyMain_card_content .desc {
   color:grey
@@ -201,6 +200,7 @@
   display: flex;
   height:220px;
   margin-bottom: 60px;
+  width: 100%;
 }
 .bodyMain .card .title {
   padding:8px 0
@@ -223,9 +223,10 @@
 .bosyMain_card_content .tag {
   background: var(--prime);
   color:#fff;
-  font-size: 16px;
-  padding:4px;
-  margin-bottom:8px
+  font-size: 12px;
+  padding:4px 8px;
+  margin-bottom:8px;
+  border-radius:4px;
 }
 .bosyMain_card_content footer {
   font-size: 12px;
@@ -270,7 +271,10 @@
     height: auto;
   }
   .bodyMain .card .img_container {
-    width:100%;
+    width:100% !important;
     margin-bottom:10px
+  }
+  .bosyMain_card_content {
+    padding:0
   }
 }

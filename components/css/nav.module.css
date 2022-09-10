@@ -1,10 +1,15 @@
+.nav {
+
+  z-index: 3;
+}
 .top_nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height:40px;
   padding:0 5%;
-  border-bottom:1px solid lightgrey
+  border-bottom:1px solid lightgrey;
+  background: #fff;
 }
 /* /////////////////// dark mode /////////////////////// */
 .darkNav {
@@ -43,6 +48,9 @@
 .darkNav .bottom_nav  {
   border-top:1px solid #222831 !important;
   border-bottom:1px solid #222831 !important;
+}
+.darkNav .title_container {
+  background: var(--d)
 }
 /* ////////////////////////////////////////////////////// */
 .top_nav .links_container {
@@ -92,19 +100,22 @@
   justify-content: center;
   align-items: center;
   height: 140px;
+  background: #eee
 }
 .title_container img {
   height: 80%;
   cursor: pointer;
 }
 .bottom_nav {
-  display: block;
+  position: sticky;
+  top:0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height:60px;
   padding:0 5%;
-  background-color: var(--d)
+  background-color: var(--d);
+  z-index: 3
 }
 .bottom_nav ul {
   display: flex;

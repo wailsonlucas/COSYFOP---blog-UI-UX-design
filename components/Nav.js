@@ -52,9 +52,6 @@ export default function Nav() {
 
   const handelLanguageToggle = lan => {
     if(typeof window !== "undefined") {
-      // setLangu(lan)
-      // localStorage.setItem("languagestorage", lan)
-
 
       let langState = localStorage.languagestorage
       console.log(langState)
@@ -76,6 +73,7 @@ export default function Nav() {
   }
 
   return (
+    <>
     <nav style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.nav} ${darkMode&&s.darkNav}`}>
       <div className={s.top_nav}>
         <div className={s.links_container}>
@@ -90,30 +88,6 @@ export default function Nav() {
       </div>
       <div className={s.title_container}>
         <Link href="/"><img src={"images/static/logo.png"} alt="" /></Link>
-      </div>
-
-      <div className={s.bottom_nav}>
-        <ul>
-          <li><Link href="/">APPEL A L&#39;ACTION</Link></li>
-          <li><Link href="/">COMMUNIQUES</Link></li>
-          <li><Link href="/">DROITS SYNDICAUX</Link></li>
-          <li><Link href="/">REJOINDRE LA COSYFOP</Link></li>
-          <li><Link href="/">MEMBRES DE L&#39;EXECUTIF</Link></li>
-          <li className={s.darkModeButtons}>
-            {
-              darkMode?
-              <i onClick={handelDarkModeToggle} className="fa-solid fa-sun"></i>
-              :
-              <i onClick={handelDarkModeToggle} className="fa-solid fa-moon"></i>
-            }
-            {
-              lang==="fr"?
-              <button className={s.lang_icon} onClick={() => handelLanguageToggle("fr")}>AR</button>
-              :
-              <button className={s.lang_icon} onClick={() => handelLanguageToggle("ar")}>FR</button>
-            }
-          </li>
-        </ul>
       </div>
 
       {sideMenu&&
@@ -150,5 +124,29 @@ export default function Nav() {
         </div>
       }
     </nav>
+    <div className={s.bottom_nav}>
+      <ul>
+        <li><Link href="/">APPEL A L&#39;ACTION</Link></li>
+        <li><Link href="/">COMMUNIQUES</Link></li>
+        <li><Link href="/">DROITS SYNDICAUX</Link></li>
+        <li><Link href="/">REJOINDRE LA COSYFOP</Link></li>
+        <li><Link href="/">MEMBRES DE L&#39;EXECUTIF</Link></li>
+        <li className={s.darkModeButtons}>
+          {
+            darkMode?
+            <i onClick={handelDarkModeToggle} className="fa-solid fa-sun"></i>
+            :
+            <i onClick={handelDarkModeToggle} className="fa-solid fa-moon"></i>
+          }
+          {
+            lang==="fr"?
+            <button className={s.lang_icon} onClick={() => handelLanguageToggle("fr")}>AR</button>
+            :
+            <button className={s.lang_icon} onClick={() => handelLanguageToggle("ar")}>FR</button>
+          }
+        </li>
+      </ul>
+    </div>
+    </>
   )
 }
