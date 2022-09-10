@@ -10,11 +10,9 @@ export default function Nav() {
   const dispatch = useDispatch()
   let { sideMenu, darkMode, lang } = useSelector(state => state.MainReducer)
   const [dark, setDark] = useState(false)
-  // const [langu, setLangu] = useState("")
 
   useEffect(() => {
     checkDark()
-    // checkLang()
   }, [dark])
 
   const checkDark = () => {
@@ -77,12 +75,12 @@ export default function Nav() {
     <nav style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.nav} ${darkMode&&s.darkNav}`}>
       <div className={s.top_nav}>
         <div className={s.links_container}>
-          <Link href="/about">A PROPOS DE NOUS</Link>
-          <Link href="/">RÈGLEMENTATIONS DE LA COSYFOP</Link>
-          <Link href="/friendly-organisations"><a>FÉDÉRATIONS SYNDICALES</a></Link>
-          <Link href="/friendly-organisations"><a>BIBLIOTHÈQUE DES LOIS DU TRAVAIL</a></Link>
-          <Link href="/friendly-organisations"><a>INTERNATIONALES</a></Link>
-          <Link href="/contact"><a>NOUS CONTACTER</a></Link>
+          <Link href="/about">{lang==="fr"?"A PROPOS DE NOUS":"حولنا"}</Link>
+          <Link href="/">{lang==="fr"?"RÈGLEMENTATIONS DE LA COSYFOP":"قوانين COSYFOP"}</Link>
+          <Link href="/friendly-organisations"><a>{lang==="fr"?"Fédérations syndicales":"حولنا"}</a></Link>
+          <Link href="/friendly-organisations"><a>{lang==="fr"?"BIBLIOTHÈQUE DES LOIS DU TRAVAIL":"مكتبة قانون العمل"}</a></Link>
+          <Link href="/friendly-organisations"><a>{lang==="fr"?"INTERNATIONALES":"دوليا"}</a></Link>
+          <Link href="/contact"><a>{lang==="fr"?"NOUS CONTACTER":"إتصل بنا"}</a></Link>
         </div>
         <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-bars"></i>
       </div>
