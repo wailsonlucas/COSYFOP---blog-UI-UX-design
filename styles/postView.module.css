@@ -1,8 +1,13 @@
 .postView_body {
   display: flex;
   padding:0 var(--sideMargin);
-  margin-top:20px
+  padding-top:20px
 }
+/* //////////////////// */
+.darkPostView {
+  background:var(--d)
+}
+/* //////////////////// */
 .postView_body main {
   width:70%;
   margin-right:20px;
@@ -18,24 +23,55 @@
 }
 .post_title {
   font-size: 40px;
+  margin:10px 0
 }
+/* /////////// /Dark Mode //////// */
+.darkPostView .post_title {
+  color:#fff
+}
+.darkPostView .renderedPost_metadata i {
+  color:lightgrey
+}
+.darkPostView .post_content {
+  color:lightgrey
+}
+/* //////////////////// */
 .renderedPost_metadata {
   color:grey;
   font-size: 14px
 }
 .renderedPost_metadata i {
-  margin  :5px
+  margin :5px
 }
 .post_content {
   margin:20px 0;
-  line-height: 25px;
-  color:var(--g)
+  line-height: 28px;
+  color:var(--g);
+  text-align:justify;
 }
 /* _________________________ simular_posts _________________________ */
 .simular_posts > div {
   display: flex;
   justify-content: space-between;
 }
+/* /////////// /Dark Mode //////// */
+.darkPostView .simular_posts section p {
+  color:#fff;
+  background: grey
+}
+.darkPostView .simular_posts section  {
+  border-bottom:1px solid grey
+}
+.darkPostView .simular_post b  {
+  color:#fff
+}
+.darkPostView .simular_post footer i {
+  color:lightgrey
+}
+.simular_post .desc {
+  color:grey !important
+}
+/* //////////////////// */
 .simular_posts section {
   border-bottom:1px solid var(--i);
   margin-bottom: 20px;
@@ -48,19 +84,33 @@
 }
 .simular_post {
   display: flex;
-  flex-direction: column;
-  height:250px;
-  width: 240px;
+  height:180px;
+  margin-bottom:20px
+}
+.simular_post .desc {
+  margin:10px 0;
+  line-height: 28px;
 }
 .simular_post b {
   flex-grow: 1;
   margin:4px 0
 }
+.simular_post > div {
+  flex-grow:1
+}
 .simular_post footer {
   padding:6px 0
 }
+.simular_post footer span {
+  padding-right:10px
+}
+.simular_post footer i {
+  padding-right:10px
+}
 .simular_post .img_cont {
-  height:70%
+  height:100%;
+  width:200px;
+  margin-right:20px;
 }
 .simular_post .img_cont img {
   height: 100%;

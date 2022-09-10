@@ -1,4 +1,6 @@
+import { useSelector } from "react-redux"
 import Head from  "next/head"
+import Link from "next/link"
 // css
 import s from "../styles/postView.module.css"
 //components
@@ -7,19 +9,20 @@ import Footer from "../components/Footer"
 import Aside from "../components/Aside"
 
 export default function PostView({ renderedPost, simPosts, randomPosts, sorted }) {
+  let { darkMode } = useSelector(state => state.MainReducer)
   return (
     <div>
     <Head>
-      <title>COSYFOP</title>
+      <title>{renderedPost.title}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
       <Nav />
-      <div className={s.postView_body}>
+      <div className={`${s.postView_body} ${darkMode&&s.darkPostView}`}>
         <main>
           <div className={s.img_cont}>
             <img src={`/images/static/${renderedPost.filename}`} alt="" />
           </div>
-          <b className={s.post_title}>{renderedPost.title}</b>
+          <p className={s.post_title}>{renderedPost.title}</p>
           <div className={s.renderedPost_metadata}>
             <span><i className="fa-solid fa-calendar-days"></i>{new Date(renderedPost.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{renderedPost.views}</span>
           </div>
@@ -31,17 +34,22 @@ export default function PostView({ renderedPost, simPosts, randomPosts, sorted }
 
             <section><p>ARTICLES SIMILAIRES</p></section>
             {simPosts&&simPosts.map((simpost,index) =>
-              <div  key={index}>
-                <div className={s.simular_post}>
-                  <div className={s.img_cont}>
-                    <img src={`/images/static/${simpost.filename}`} alt="" />
+              <Link href={`/${simpost.id}`}>
+                <a key={index}>
+                  <div className={s.simular_post}>
+                    <div className={s.img_cont}>
+                      <img src={`/images/static/${simpost.filename}`} alt="" />
+                    </div>
+                    <div>
+                      <b>{simpost.title}</b>
+                      <p className={s.desc}>{simpost.content.substring(0, 60) + "..."}</p>
+                      <footer>
+                        <span><i className="fa-solid fa-calendar-days"></i>{new Date(simpost.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{simpost.views}</span>
+                      </footer>
+                    </div>
                   </div>
-                  <b>{simpost.title}</b>
-                  <footer>
-                    <span>{new Date(simpost.date).toDateString()}</span>
-                  </footer>
-                </div>
-              </div>
+                </a>
+              </Link>
             )}
 
           </div>

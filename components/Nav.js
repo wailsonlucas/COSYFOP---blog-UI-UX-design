@@ -52,7 +52,7 @@ export default function Nav() {
         <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-bars"></i>
       </div>
       <div className={s.title_container}>
-        <img src={"images/static/logo.png"} alt="" />
+        <Link href="/"><img src={"images/static/logo.png"} alt="" /></Link>
       </div>
 
       <div className={s.bottom_nav}>
@@ -62,7 +62,14 @@ export default function Nav() {
           <li><Link href="/">DROITS SYNDICAUX</Link></li>
           <li><Link href="/">REJOINDRE LA COSYFOP</Link></li>
           <li><Link href="/">MEMBRES DE L&#39;EXECUTIF</Link></li>
-          <button onClick={handelDarkModeToggle}>Dark</button>
+          <li className={s.darkModeButtons}>
+            {
+              darkMode?
+              <i onClick={handelDarkModeToggle} className="fa-solid fa-sun"></i>
+              :
+              <i onClick={handelDarkModeToggle} className="fa-solid fa-moon"></i>
+            }
+          </li>
         </ul>
       </div>
 
@@ -87,15 +94,13 @@ export default function Nav() {
           </div>
 
           <footer>
-            <div className={s.socials}>
-              <section>
-                <Link href="/"><a className={s.side_socials_fb}><i className="fa-brands fa-facebook-f"></i></a></Link>
-                <Link href="/"><a className={s.side_socials_twitter}><i className="fa-brands fa-twitter"></i></a></Link>
-              </section>
-              <section>
-                <Link href="/"><a className={s.side_socials_instagram}><i className="fa-brands fa-instagram"></i></a></Link>
-                <Link href="/"><a className={s.side_socials_youtube}><i className="fa-brands fa-youtube"></i></a></Link>
-              </section>
+            <div className={s.darkModeButtons}>
+              {
+                darkMode?
+                <i onClick={handelDarkModeToggle} className="fa-solid fa-sun"></i>
+                :
+                <i onClick={handelDarkModeToggle} className="fa-solid fa-moon"></i>
+              }
             </div>
             <i onClick={() => dispatch(triggerSideMenu())} className="fa-solid fa-xmark"></i>
           </footer>

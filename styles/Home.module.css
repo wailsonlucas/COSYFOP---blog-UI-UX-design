@@ -1,6 +1,6 @@
 .home > header {
-  height:420px;
-  /* overflow-x: hidden; */
+  height:430px;
+  overflow-x: hidden;
 }
 /* /////////////////// dark mode /////////////////////// */
 .darkIndex {
@@ -135,6 +135,10 @@
   color:lightgrey !important;
 }
 /* ////////////////////////// */
+.intro {
+  width: 90% !important;
+  margin:20px auto;
+}
 .intro > div {
   width:50%;
 }
