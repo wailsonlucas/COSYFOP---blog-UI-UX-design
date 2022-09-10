@@ -166,6 +166,9 @@
   height:100px;
   margin:22px 0;
 }
+.aside_trending .card .content{
+  padding:0 10px;
+}
 .aside_trending .card .img_container {
   height:100%;
   width:100px;

@@ -37,7 +37,7 @@ export default function Footer({ randomPosts }) {
                <div className={s.img_container}>
                  <img src={`/images/static/${rand.filename}`} alt="" />
                </div>
-               <div>
+               <div className={s.content}>
                <p>{
                    lang==="fr" ? rand.languages.fr.title.length > 30 ? rand.languages.fr.title.substring(0, 30) + "..." : rand.languages.fr.title
                    :

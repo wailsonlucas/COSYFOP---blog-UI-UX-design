@@ -50,14 +50,17 @@ export default function Aside({ sorted, randomPosts }) {
               <div className={s.img_container}>
                 <img src={`/images/static/${sort.filename}`} alt="" />
               </div>
-              <p>{
-                  lang==="fr" ? sort.languages.fr.title.length > 30 ? sort.languages.fr.title.substring(0, 30) + "..." : sort.languages.fr.title
-                  :
-                  sort.languages.ar.length > 30 ? sort.languages.ar.substring(0, 30) + "..." : sort.languages.ar.title
-                }</p>
-              <footer>
-                <span><i className="fa-solid fa-calendar-days"></i>{new Date(sort.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{sort.views}</span>
-              </footer>
+              <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}}>
+                <p>{
+                    lang==="fr" ? sort.languages.fr.title.length > 30 ? sort.languages.fr.title.substring(0, 30) + "..." : sort.languages.fr.title
+                    :
+                    sort.languages.ar.length > 30 ? sort.languages.ar.substring(0, 30) + "..." : sort.languages.ar.title
+                  }
+                </p>
+                <footer>
+                  <span><i className="fa-solid fa-calendar-days"></i>{new Date(sort.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{sort.views}</span>
+                </footer>
+              </div>
             </a>
           </Link>
         )}
@@ -75,12 +78,13 @@ export default function Aside({ sorted, randomPosts }) {
               <div className={s.img_container}>
                 <img src={`/images/static/${rand.filename}`} alt="" />
               </div>
-                <div>
+                <div className={s.content}>
                 <div className={s.title}>{
                     lang==="fr" ? rand.languages.fr.title.length > 30 ? rand.languages.fr.title.substring(0, 30) + "..." : rand.languages.fr.title
                     :
                     rand.languages.ar.length > 30 ? rand.languages.ar.substring(0, 30) + "..." : rand.languages.ar.title
-                  }</div>
+                  }
+                </div>
               <footer>
                 <p><i className="fa-solid fa-calendar-days"></i>{new Date(rand.date).toDateString()}</p><p> <i className="fa-solid fa-eye"></i>{rand.views}</p>
               </footer>

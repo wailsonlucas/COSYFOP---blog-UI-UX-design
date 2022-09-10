@@ -6,6 +6,9 @@
   color:#fff;
   padding:0 var(--sideMargin);
 }
+.footer .content {
+  padding:0 10px;
+}
 /* ------------------ first div */
 .footer > div {
   flex-grow: 1;
