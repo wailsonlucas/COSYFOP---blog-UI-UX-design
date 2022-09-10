@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import s from "./css/nav.module.css"
@@ -9,54 +9,10 @@ import { triggerSideMenu, setDarkMode, setLanguage } from "../reducers/ActionsCr
 export default function Nav() {
   const dispatch = useDispatch()
   let { sideMenu, darkMode, lang } = useSelector(state => state.MainReducer)
-  // const [dark, setDark] = useState(false)
-
-  // useEffect(() => {
-  //   checkDark()
-  // }, [dark])
-
-  // const checkDark = useCallback(() => {
-  //   if(typeof window !== "undefined") {
-  //     let darkState = Boolean(localStorage.darkstorage)
-  //     if(darkState) {
-  //       dispatch(setDarkMode(dark))
-  //     } else {
-  //       dispatch(setDarkMode(dark))
-  //     }
-  //   }
-  // }, [dark, dispatch])
-
-
-  // const checkDark = () => {
-  //   if(typeof window !== "undefined") {
-  //     let darkState = Boolean(localStorage.darkstorage)
-  //
-  //     if(darkState) {
-  //       dispatch(setDarkMode(dark))
-  //     } else {
-  //       dispatch(setDarkMode(dark))
-  //     }
-  //
-  //   }
-  // }
-
-  // const checkLang = () => {
-  //   if(typeof window !== "undefined") {
-  //     let langState = localStorage.languagestorage
-  //
-  //     if(langState==="fr") {
-  //       dispatch(setLanguage("ar"))
-  //     } else if(langState==="ar") {
-  //       dispatch(setLanguage("fr"))
-  //     } else {
-  //       dispatch(setLanguage("fr"))
-  //     }
-  //   }
-  // }
 
 
 
-  const handelDarkModeToggle =   useCallback(() => {
+  const handelDarkModeToggle = () => {
       if(typeof window !== "undefined") {
         let darkState = Boolean(localStorage.darkstorage)
 
@@ -68,11 +24,11 @@ export default function Nav() {
           localStorage.setItem("darkstorage", true)
         }
       }
-    }, [dispatch])
+    },
 
 
 
-  const handelLanguageToggle = useCallback(() => {
+  const handelLanguageToggle = () => {
       if(typeof window !== "undefined") {
 
         let langState = localStorage.languagestorage
@@ -91,7 +47,7 @@ export default function Nav() {
         }
 
       }
-    }, [dispatch])
+    },
 
   return (
     <>
