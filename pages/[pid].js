@@ -33,7 +33,7 @@ export default function PostView({ renderedPost, simPosts, randomPosts, sorted }
           <div style={lang==="fr"?{direction:"ltr"}:{direction:"rtl"}} className={s.simular_posts}>
             <section><p>{lang==="fr"?"ARTICLES SIMILAIRES":"مواضيع ممالة"}</p></section>
             {simPosts&&simPosts.map((simpost,index) =>
-              <Link href={`/${simpost.id}`}>
+              <Link key={inedx} href={`/${simpost.id}`}>
                 <a key={index}>
                   <div className={s.simular_post}>
                     <div className={s.img_cont}>

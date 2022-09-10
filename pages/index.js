@@ -104,7 +104,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
               </p>
             <p className={s.desc}>
               {lang==="fr"?
-              <span>sed dszo eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"</span>
+              <span>sed dszo eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
               :
               <span>نحن نوجه اليك دعوة صريحا للانظمام الى مجتمعنا الان</span>
             }

@@ -13,7 +13,7 @@ export default function Nav() {
 
   useEffect(() => {
     checkDark()
-  }, [dark])
+  }, [dark, checkDark])
 
   const checkDark = () => {
     if(typeof window !== "undefined") {
