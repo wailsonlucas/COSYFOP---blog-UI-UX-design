@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux"
 import s from "./css/aside.module.css"
 import Link from "next/link"
 //React-Slick
@@ -6,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
 export default function Aside({ sorted, randomPosts }) {
-
+  const { darkMode } = useSelector(state => state.MainReducer)
   var settings = {
     dots: true,
     infinite: true,
@@ -15,7 +16,7 @@ export default function Aside({ sorted, randomPosts }) {
     slidesToScroll: 1
   };
   return (
-    <aside className={s.bodyAside}>
+    <aside className={`${s.bodyAside} ${darkMode&&s.DarkBodyAside}`}>
 
       <div className={s.ad_zone}>
         <i className="fa-solid fa-bullhorn"></i>

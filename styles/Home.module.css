@@ -2,6 +2,18 @@
   height:420px;
   /* overflow-x: hidden; */
 }
+/* /////////////////// dark mode /////////////////////// */
+.darkIndex {
+  background: var(--d)
+}
+.darkIndex .trending_posts header p {
+  background:var(--dlight);
+  color:#fff;
+}
+.trending_posts header {
+  border-bottom:1px solid var(--dlight) !important
+}
+/* /////////////////// dark mode /////////////////////// */
 .home header .header_child {
   position: relative;
   height: 400px;
@@ -69,6 +81,14 @@
   height:320px;
   width: 220px;
 }
+/* /////////////// */
+.darkIndex .trending_post {
+  color:#fff;
+}
+.darkIndex .trending_post i {
+  color:#fff;
+}
+/* ///////////////// */
 .trending_post i {
   margin-right:5px
 }
@@ -104,6 +124,17 @@
   margin:60px var(--sideMargin);
   height:340px;
 }
+/* ////////////////////////// */
+.darkIntro .shade {
+  color:lightgrey !important
+}
+.darkIntro .title span:last-child {
+  color:#fff !important;
+}
+.darkIntro .desc {
+  color:lightgrey !important;
+}
+/* ////////////////////////// */
 .intro > div {
   width:50%;
 }
@@ -112,7 +143,6 @@
 }
 .intro .shade {
   color:var(--g);
-  font-weight: 900
 }
 .intro .title {
   font-size: 36px;
@@ -123,10 +153,11 @@
   color:var(--prime) !important;
 }
 .intro .title span:last-child {
-  color:var(--i) !important;
+  color:var(--i);
 }
 .intro .desc {
-  color:var(--a)
+  color:var(--a);
+  line-height: 25px;
 }
 /* ____________________ body ____________________ */
 .body {
@@ -138,13 +169,27 @@
   width:70%;
   margin-right:20px;
 }
+/* ////////////////////////// */
+.darkBodyMain .card i {
+  color:#fff
+}
+.darkBodyMain .bosyMain_card_content .tag {
+  border-left:4px solid grey;
+  color:grey
+}
+.darkBodyMain .bosyMain_card_content b {
+  color:#fff;
+}
+.darkBodyMain .bosyMain_card_content .desc {
+  color:grey
+}
+/* ////////////////////////// */
 .bodyMain .card i {
   margin-right:5px
 }
 .bodyMain .card span {
   margin-right:5px
 }
-
 .bodyMain .card {
   display: flex;
   height:220px;
@@ -182,7 +227,8 @@
   margin:8px 0
 }
 .bosyMain_card_content .desc {
-  color:var(--g)
+  color:var(--g);
+  line-height: 25px;
 }
 
 /* ____________________ media queries ____________________ */

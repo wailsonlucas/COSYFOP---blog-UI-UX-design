@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux"
 import s from "../styles/Home.module.css"
 import Link from "next/link"
 import Head from "next/head"
@@ -11,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick"
 
 export default function Home({ sorted, trendingByViews, randomPosts }) {
+  let { darkMode } = useSelector(state => state.MainReducer)
   var settings = {
     dots: true,
     infinite: true,
@@ -20,7 +22,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
   };
 
   return (
-    <div className={s.home}>
+    <div className={`${s.home} ${darkMode&&s.darkIndex}`}>
     <Head>
       <title>COSYFOP | SITE OFFICIEL</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -75,7 +77,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
         </main>
       </div>
 
-      <div className={s.intro}>
+      <div className={`${s.intro} ${darkMode&&s.darkIntro}`}>
           <div>
             <p className={s.shade}>Pourquoi nous sommes ici ?</p>
             <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
@@ -84,7 +86,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
           <img src={"/images/static/j1.jpg"} alt="" />
       </div>
 
-      <div className={s.intro}>
+      <div className={`${s.intro} ${darkMode&&s.darkIntro}`}>
       <img src={"/images/static/j2.jpg"} alt="" />
           <div>
             <p className={s.shade}>C&#39;est notre vision !</p>
@@ -93,7 +95,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
           </div>
       </div>
 
-      <div className={s.body}>
+      <div className={`${s.body} ${darkMode&&s.darkBodyMain}`}>
         <main className={s.bodyMain}>
         {
           sorted&&sorted.map((post, index) =>

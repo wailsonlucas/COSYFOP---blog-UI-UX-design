@@ -6,6 +6,24 @@
   padding:0 5%;
   border-bottom:1px solid lightgrey
 }
+/* /////////////////// dark mode /////////////////////// */
+.darkNav {
+  background:var(--d);
+}
+.darkNav .top_nav  {
+  border-bottom:1px solid #222831 !important;
+}
+.darkNav a {
+  color:#fff !important;
+  border-right:1px solid #222831 !important;
+}
+.darkNav a:last-child {
+  border:none !important;
+}
+.darkNav .bottom_nav  {
+  border-top:1px solid #222831 !important;
+}
+/* ////////////////////////////////////////////////////// */
 .top_nav .links_container {
   display: flex;
   justify-content: space-around;

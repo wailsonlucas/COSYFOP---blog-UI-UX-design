@@ -27,7 +27,7 @@ export default function Footer({ randomPosts }) {
           </div>
         </div>
         <div className={s.featurde_posts}>
-          <b>Articles Tendence</b>
+          <b>CHOISU POUR VOUS</b>
           {
            randomPosts&&randomPosts.map((rand, index) =>
              <Link key={index} href={`/${rand.id}`}>

@@ -1,23 +1,45 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import s from "./css/nav.module.css"
 import Link from "next/link"
 //Actions
-import { triggerSideMenu } from "../reducers/ActionsCreator"
+import { triggerSideMenu, setDarkMode } from "../reducers/ActionsCreator"
 
 export default function Nav() {
   const dispatch = useDispatch()
-  let { sideMenu } = useSelector(state => state.MainReducer)
+  let { sideMenu, darkMode } = useSelector(state => state.MainReducer)
+  const [dark, setDark] = useState(false)
+
+  // if(typeof window !== "undefined") localStorage.setItem("darkModeState", false)
+
 
   useEffect(() => {
+    checkDark()
+  }, [dark])
+
+  const checkDark = () => {
     if(typeof window !== "undefined") {
-      console.log(window.innerWidth)
+      let darkState = Boolean(JSON.parse(localStorage.darkstorage))
+      if(darkState) {
+        dispatch(setDarkMode())
+      } else {
+        dispatch(setDarkMode())
+      }
+
     }
-  })
+  }
+
+  const handelDarkModeToggle = () => {
+    if(typeof window !== "undefined") {
+      setDark(!dark)
+      localStorage.setItem("darkstorage", dark)
+    }
+  }
+
 
   return (
-    <nav className={s.nav}>
+    <nav className={`${s.nav} ${darkMode&&s.darkNav}`}>
       <div className={s.top_nav}>
         <div className={s.links_container}>
           <Link href="/about">A PROPOS DE NOUS</Link>
@@ -40,6 +62,7 @@ export default function Nav() {
           <li><Link href="/">DROITS SYNDICAUX</Link></li>
           <li><Link href="/">REJOINDRE LA COSYFOP</Link></li>
           <li><Link href="/">MEMBRES DE L&#39;EXECUTIF</Link></li>
+          <button onClick={handelDarkModeToggle}>Dark</button>
         </ul>
       </div>
 

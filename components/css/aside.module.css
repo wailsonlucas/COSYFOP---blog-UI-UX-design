@@ -1,11 +1,30 @@
-/* ------------- aside */
 .bodyAside {
   width:30%;
 }
+/* //////////////////////////////// */
+.DarkBodyAside .ad_zone {
+  background:var(--dlight);
+  color: #fff
+}
+.ad_zone i {
+  color:#fff !important
+}
+.DarkBodyAside .aside_slideShow .card p {
+  color:#fff
+}
+.DarkBodyAside footer i {
+  color:#fff
+}
+.DarkBodyAside .aside_trending > div {
+  background: lightgrey;
+  color:var(--d);
+}
+.DarkBodyAside .aside_trending .title {
+  color: #fff !important
+}
+/* //////////////////////////////// */
 .bodyAside i {
   margin-right:5px
-}
-.bodyAside > div {
 }
 .ad_zone {
   display: flex;
