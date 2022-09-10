@@ -13,7 +13,7 @@ export default function PostView({ renderedPost, simPosts, randomPosts, sorted }
   return (
     <div>
     <Head>
-      <title>{renderedPost.languages.fr.title}</title>
+      <title>{lang==="fr"?renderedPost.languages.fr.title:renderedPost.languages.ar.title}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
       <Nav />
@@ -33,7 +33,7 @@ export default function PostView({ renderedPost, simPosts, randomPosts, sorted }
           <div style={lang==="fr"?{direction:"ltr"}:{direction:"rtl"}} className={s.simular_posts}>
             <section><p>{lang==="fr"?"ARTICLES SIMILAIRES":"مواضيع ممالة"}</p></section>
             {simPosts&&simPosts.map((simpost,index) =>
-              <Link key={inedx} href={`/${simpost.id}`}>
+              <Link key={index} href={`/${simpost.id}`}>
                 <a key={index}>
                   <div className={s.simular_post}>
                     <div className={s.img_cont}>

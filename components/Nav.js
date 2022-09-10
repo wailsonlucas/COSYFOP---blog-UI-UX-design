@@ -24,7 +24,7 @@ export default function Nav() {
           localStorage.setItem("darkstorage", true)
         }
       }
-    },
+    }
 
 
 
@@ -47,7 +47,7 @@ export default function Nav() {
         }
 
       }
-    },
+    }
 
   return (
     <>
