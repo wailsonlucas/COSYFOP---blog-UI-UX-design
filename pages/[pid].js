@@ -9,30 +9,29 @@ import Footer from "../components/Footer"
 import Aside from "../components/Aside"
 
 export default function PostView({ renderedPost, simPosts, randomPosts, sorted }) {
-  let { darkMode } = useSelector(state => state.MainReducer)
+  let { darkMode, lang } = useSelector(state => state.MainReducer)
   return (
     <div>
     <Head>
-      <title>{renderedPost.title}</title>
+      <title>{renderedPost.languages.fr.title}</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
       <Nav />
-      <div className={`${s.postView_body} ${darkMode&&s.darkPostView}`}>
-        <main>
+      <div style={lang==="fr"?{direction:"ltr"}:{direction:"rtl"}} className={`${s.postView_body} ${darkMode&&s.darkPostView}`}>
+        <main style={lang==="fr"?{marginRight:"20px"}:{marginLeft:"20px"}}>
           <div className={s.img_cont}>
             <img src={`/images/static/${renderedPost.filename}`} alt="" />
           </div>
-          <p className={s.post_title}>{renderedPost.title}</p>
+          <p className={s.post_title}>{lang==="fr"?renderedPost.languages.fr.title:renderedPost.languages.ar.title}</p>
           <div className={s.renderedPost_metadata}>
             <span><i className="fa-solid fa-calendar-days"></i>{new Date(renderedPost.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{renderedPost.views}</span>
           </div>
           <div className={s.post_content}>
-            {renderedPost.content}
+            {lang==="fr"?renderedPost.languages.fr.content:renderedPost.languages.ar.content}
           </div>
 
-          <div className={s.simular_posts}>
-
-            <section><p>ARTICLES SIMILAIRES</p></section>
+          <div style={lang==="fr"?{direction:"ltr"}:{direction:"rtl"}} className={s.simular_posts}>
+            <section><p>{lang==="fr"?"ARTICLES SIMILAIRES":"مواضيع ممالة"}</p></section>
             {simPosts&&simPosts.map((simpost,index) =>
               <Link href={`/${simpost.id}`}>
                 <a key={index}>
@@ -40,9 +39,14 @@ export default function PostView({ renderedPost, simPosts, randomPosts, sorted }
                     <div className={s.img_cont}>
                       <img src={`/images/static/${simpost.filename}`} alt="" />
                     </div>
-                    <div>
-                      <b>{simpost.title}</b>
-                      <p className={s.desc}>{simpost.content.substring(0, 60) + "..."}</p>
+                    <div className={s.content}>
+                      <b>{lang==="fr"?simpost.languages.fr.title:simpost.languages.ar.title}</b>
+                      <p className={s.desc}>{lang==="fr"?
+                        simpost.languages.fr.content.substring(0, 60) + "..."
+                        :
+                        simpost.languages.ar.content.substring(0, 60) + "..."
+                        }
+                        </p>
                       <footer>
                         <span><i className="fa-solid fa-calendar-days"></i>{new Date(simpost.date).toDateString()}</span><span><i className="fa-solid fa-eye"></i>{simpost.views}</span>
                       </footer>
