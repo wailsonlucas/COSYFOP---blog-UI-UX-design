@@ -20,11 +20,11 @@ export default function Aside({ sorted, randomPosts }) {
 
       <div className={s.ad_zone}>
         <i className="fa-solid fa-bullhorn"></i>
-        <p>Espace Publicitaire</p>
+        <p>{lang=="fr"?"Espace Publicitaire":"مساحة إعلانية"}</p>
       </div>
 
       <div className={s.side_socials}>
-        <section>Rester Connecté</section>
+        <section>{lang=="fr"?"Rester Connecté":"إبق على تواصل دائم"}</section>
         <div>
           <Link href="/"><a className={s.side_socials_fb}><i className="fa-brands fa-facebook-f"></i></a></Link>
           <Link href="/"><a className={s.side_socials_twitter}><i className="fa-brands fa-twitter"></i></a></Link>
@@ -36,9 +36,9 @@ export default function Aside({ sorted, randomPosts }) {
       </div>
 
       <div className={s.news_letter}>
-        <p>Lettre D&#39;information</p>
+        <p>{lang=="fr"?"Lettre D&#39;information":"نشرة الرسائل"}</p>
         <input placeholder="Entrer votre Email" />
-        <button>S&#39;Abonner</button>
+        <button>{lang=="fr"?"S&#39;Abonner":"إشترك"}</button>
       </div>
 
       <div className={s.aside_slideShow}>
@@ -69,7 +69,7 @@ export default function Aside({ sorted, randomPosts }) {
 
       <div className={s.aside_trending}>
         <div>
-          CHOISU POUR VOUS
+          {lang=="fr"?"CHOISU POUR VOUS":"مواضيع مختارك لك"}
         </div>
         {
           randomPosts&&randomPosts.map((rand, index) =>

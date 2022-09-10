@@ -121,8 +121,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:60px var(--sideMargin);
-  height:340px;
+  height:100vh;
 }
 /* ////////////////////////// */
 .darkIntro .shade {

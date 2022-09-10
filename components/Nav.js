@@ -92,19 +92,19 @@ export default function Nav() {
         <div className={s.sideNav}>
           <div>
             <div className={s.left_links}>
-              <Link href="/">APPEL A L&#39;ACTION</Link>
-              <Link href="/">COMMUNIQUES</Link>
-              <Link href="/">DROITS SYNDICAUX</Link>
-              <Link href="/">REJOINDRE LA COSYFOP</Link>
-              <Link href="/">MEMBRES DE L&#39;EXECUTIF</Link>
+              <Link href="/">{lang==="fr"?"APPEL A L&#39;ACTION":"دعوة للعمل"}</Link>
+              <Link href="/">{lang==="fr"?"COMMUNIQUES":"توصل"}</Link>
+              <Link href="/">{lang==="fr"?"DROITS SYNDICAUX":"حقوق النقابات"}</Link>
+              <Link href="/">{lang==="fr"?"REJOINDRE LA COSYFOP":"إنظم إلى COSYFOP"}</Link>
+              <Link href="/">{lang==="fr"?"MEMBRES DE L&#39;EXECUTIF":"الأعضاء التنفيذيون"}</Link>
             </div>
             <div className={s.right_links}>
-              <Link href="/about">A PROPOS DE NOUS</Link>
-              <Link href="/">RÈGLEMENTATIONS DE LA COSYFOP</Link>
-              <Link href="/friendly-organisations"><a>FÉDÉRATIONS SYNDICALES</a></Link>
-              <Link href="/friendly-organisations"><a>BIBLIOTHÈQUE DES LOIS DU TRAVAIL</a></Link>
-              <Link href="/friendly-organisations"><a>INTERNATIONALES</a></Link>
-              <Link href="/contact"><a>NOUS CONTACTER</a></Link>
+              <Link href="/about">{lang==="fr"?"A PROPOS DE NOUS":"حولنا"}</Link>
+              <Link href="/">{lang==="fr"?"RÈGLEMENTATIONS DE LA COSYFOP":"قوانين COSYFOP"}</Link>
+              <Link href="/friendly-organisations"><a>{lang==="fr"?"Fédérations syndicales":"حولنا"}</a></Link>
+              <Link href="/friendly-organisations"><a>{lang==="fr"?"BIBLIOTHÈQUE DES LOIS DU TRAVAIL":"مكتبة قانون العمل"}</a></Link>
+              <Link href="/friendly-organisations"><a>{lang==="fr"?"INTERNATIONALES":"دوليا"}</a></Link>
+              <Link href="/contact"><a>{lang==="fr"?"NOUS CONTACTER":"إتصل بنا"}</a></Link>
             </div>
           </div>
 
@@ -124,11 +124,11 @@ export default function Nav() {
     </nav>
     <div className={s.bottom_nav}>
       <ul>
-        <li><Link href="/">APPEL A L&#39;ACTION</Link></li>
-        <li><Link href="/">COMMUNIQUES</Link></li>
-        <li><Link href="/">DROITS SYNDICAUX</Link></li>
-        <li><Link href="/">REJOINDRE LA COSYFOP</Link></li>
-        <li><Link href="/">MEMBRES DE L&#39;EXECUTIF</Link></li>
+        <li><Link href="/">{lang==="fr"?"APPEL A L'ACTION":"دعوة للعمل"}</Link></li>
+        <li><Link href="/">{lang==="fr"?"COMMUNIQUES":"توصل"}</Link></li>
+        <li><Link href="/">{lang==="fr"?"DROITS SYNDICAUX":"حقوق النقابات"}</Link></li>
+        <li><Link href="/">{lang==="fr"?"REJOINDRE LA COSYFOP":"إنظم إلى COSYFOP"}</Link></li>
+        <li><Link href="/">{lang==="fr"?"MEMBRES DE L'EXECUTIF":"الأعضاء التنفيذيون"}</Link></li>
         <li className={s.darkModeButtons}>
           {
             darkMode?

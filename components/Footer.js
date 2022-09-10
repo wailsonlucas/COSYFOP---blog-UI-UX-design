@@ -12,7 +12,10 @@ export default function Footer({ randomPosts }) {
             <img src={"/images/static/logo.png"} className={s.footer_logo} alt="" />
           </div>
           <div className={s.footer_desc}>
-            L’Internationale des Services Publics rassemble plus de 20 millions de travailleurs/euses, représentés par plus de 700 syndicats dans 163 pays et territoires. Nous sommes une fédération syndicale internationale qui se consacre à la promotion des services publics de qualité partout dans le monde.
+            {lang==="fr"?"L’Internationale des Services Publics rassemble plus de 20 millions de travailleurs/euses, représentés par plus de 700 syndicats dans 163 pays et territoires. Nous sommes une fédération syndicale internationale qui se consacre à la promotion des services publics de qualité partout dans le monde"
+            :
+            "توحد منظمة الخدمات العامة الدولية أكثر من 20 مليون عامل ، يمثلها أكثر من 700 نقابة في 163 دولة وإقليم. نحن اتحاد نقابي عالمي مكرس لتعزيز جودة الخدمات العامة في جميع أنحاء العالم."
+          }
           </div>
           <div className={s.footer_socials}>
             <Link href="/"><a className={s.side_socials_fb}><i className="fa-brands fa-facebook-f"></i></a></Link>
@@ -24,12 +27,12 @@ export default function Footer({ randomPosts }) {
           </div>
           <div className={s.footer_newsletter}>
             <b>Lettre D&#39;information</b>
-            <input placeholder="Entrer votre Email" />
-            <button>Subscribe</button>
+            <input placeholder={lang==="fr"?"Enter you email":"أدخل بريدك الالكتروني"} />
+            <button>{lang=="fr"?"Subscribe":"إشتراك"}</button>
           </div>
         </div>
         <div className={s.featurde_posts}>
-          <b>CHOISU POUR VOUS</b>
+          <b>{lang=="fr"?"CHOISU POUR VOUS":"مواضيع مختارة لك"}</b>
           {
            randomPosts&&randomPosts.map((rand, index) =>
              <Link key={index} href={`/${rand.id}`}>
@@ -54,7 +57,7 @@ export default function Footer({ randomPosts }) {
         </div>
         <div>
           <div className={s.insta_pictures}>
-            <b>Photos Instagram </b>
+            <b>{lang==="fr"?"Photos Instagram":"صور الانستغرام"} </b>
             <div>
               <div className={s.img_cont}>
                 <img src={"/images/static/a.jpg"} alt="" />
@@ -84,7 +87,7 @@ export default function Footer({ randomPosts }) {
             </div>
           </div>
           <div className={s.last_tweet}>
-            <b>Dernier Tweet</b>
+            <b>{lang==="fr"?"Dernier Tweet":"أحدث تغريدة"}</b>
             <div>
               <i className="fa-brands fa-twitter"></i>
               <p><span>@Lorem_ipsum</span> dolor sit amet, consectetur adipiscing elit, sed do @<span>eiusmod</span> tempor</p>

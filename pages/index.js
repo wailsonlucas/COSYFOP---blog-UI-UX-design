@@ -53,7 +53,7 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
 
       <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={s.trending_posts}>
         <header>
-          <p>Articles Tendance</p>
+          <p>{lang==="fr"?"Articles Tendance":"المواضيع الشائعة"}</p>
         </header>
         <main>
           {
@@ -87,20 +87,30 @@ export default function Home({ sorted, trendingByViews, randomPosts }) {
 
       <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.intro} ${darkMode&&s.darkIntro}`}>
           <div>
-            <p className={s.shade}>Pourquoi nous sommes ici ?</p>
-            <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
-            <p className={s.desc}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+            <p className={s.shade}>{lang==="fr"?"Pourquoi nous sommes ici ?":"لماذا نحن هنا؟"}</p>
+            <p className={s.title}>
+              {
+                lang==="fr"?
+                <>
+                  <span>Lorem ipsum dolor sit amet</span>
+                  <span>, consectetur adipiscing elit.</span>
+                </>
+                :
+                <>
+                  <span>هذه هي مجموعة الاهداف التي نسعى الى تحقيقها</span>
+                  <span>و يمكنك الانظمام الى مجتمعنا النقابي بكل سهولة</span>
+                </>
+              }
+              </p>
+            <p className={s.desc}>
+              {lang==="fr"?
+              <span>sed dszo eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"</span>
+              :
+              <span>نحن نوجه اليك دعوة صريحا للانظمام الى مجتمعنا الان</span>
+            }
+            </p>
           </div>
-          <img src={"/images/static/j1.jpg"} alt="" />
-      </div>
-
-      <div style={lang==="ar"?{direction:"rtl"}:{direction:"ltr"}} className={`${s.intro} ${darkMode&&s.darkIntro}`}>
-      <img src={"/images/static/j2.jpg"} alt="" />
-          <div>
-            <p className={s.shade}>C&#39;est notre vision !</p>
-            <p className={s.title}><span>Lorem ipsum dolor sit amet</span><span>, consectetur adipiscing elit.</span></p>
-            <p className={s.desc}>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-          </div>
+          <img src={"/images/static/j2.jpg"} alt="" />
       </div>
 
       <div className={`${s.body} ${darkMode&&s.darkBodyMain}`}>
